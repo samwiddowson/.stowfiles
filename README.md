@@ -13,7 +13,7 @@ switch no-longer-maintained NVIM Packer package manager to [lazy.nvim](https://g
 * update apt `sudo apt update`
 * install build-essentials: `sudo apt install build-essential`
 * install ripgrep: `sudo apt install ripgrep`
-* install prettierd: 'npm i -g @fsouza/prettierd'
+* install prettierd: `npm i -g @fsouza/prettierd`
 * install oh-my-posh (I don't think the required stuff is included here)
 * install tmux
   * also install [tpm (tmux plugin manager)](https://github.com/tmux-plugins/tpm)
