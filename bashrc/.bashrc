@@ -118,7 +118,7 @@ fi
 
 PATH="$PATH:~/.config/bin"
 
-eval "$(oh-my-posh init bash --config '~/.config/oh-my-posh/lambdageneration.omp.json')"
+eval "$(oh-my-posh init bash --config '~/.config/oh-my-posh/lambdageneration-green.omp.json')"
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -130,3 +130,16 @@ fi
 
 alias vim="nvim"
 alias ll="eza -l --git"
+alias nuget="mono /usr/local/bin/nuget.exe"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+function yy() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
+

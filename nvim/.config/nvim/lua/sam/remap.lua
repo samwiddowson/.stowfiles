@@ -25,6 +25,7 @@ vim.keymap.set("v", "<C-v>", "c<Esc>\"+p")
 vim.keymap.set("i", "<C-v>", "<Esc>\"+pa")
 
 vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "q:", "<nop>")
 
 vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
