@@ -7,10 +7,13 @@ switch no-longer-maintained NVIM Packer package manager to [lazy.nvim](https://g
 * install wsl via powershell (refer to Microsoft documentation)
 
 ## General
+* install alacritty (if straight linux)
 * install nvim
   * If using Ubuntu it can be with `sudo snap install nvim --classic`
   * better to just build from source though
 * update apt `sudo apt update`
+* install nvm
+  * and node through this
 * install build-essentials: `sudo apt install build-essential`
 * install ripgrep: `sudo apt install ripgrep`
 * install prettierd: `npm i -g @fsouza/prettierd`
@@ -18,6 +21,8 @@ switch no-longer-maintained NVIM Packer package manager to [lazy.nvim](https://g
 * install tmux
   * also install [tpm (tmux plugin manager)](https://github.com/tmux-plugins/tpm)
 * install [ stow ](https://www.gnu.org/software/stow) from [ source ](https://ftp.gnu.org/gnu/stow)
+* install yazi
+
 
 ## tmux
 Remember: in tmux, before sourcing the new file, it will be Ctrl-B, r to source the new file
