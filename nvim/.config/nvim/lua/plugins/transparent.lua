@@ -1,11 +1,11 @@
 return {
     'xiyaowong/transparent.nvim',
+    build = ':TransparentEnable',
     config = function()
-        local transparent = require("transparent").setup()
-
-        vim.g.transparent_groups = vim.list_extend(
-            vim.g.transparent_groups or {},
-            { "NormalFloat" }
-        )
+        require("transparent").setup({
+            extra_groups = {
+                'NormalFloat'
+            }
+        })
     end
 }
