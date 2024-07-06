@@ -1,7 +1,7 @@
 # Sam's dotfiles -- stowed
 
 ## TO FIX
-switch no-longer-maintained NVIM Packer package manager to [lazy.nvim](https://github.com/folke/lazy.nvim)
+fix clipboard copy/paste (not sure if this is a local system issue or an nvim config issue)
 
 ## If using WSL
 * install wsl via powershell (refer to Microsoft documentation)
