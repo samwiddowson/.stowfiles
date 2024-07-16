@@ -1,0 +1,2 @@
+[opener]
+edit = [ {run = 'nvim "$@"', orphan = false, block = true}, ]
