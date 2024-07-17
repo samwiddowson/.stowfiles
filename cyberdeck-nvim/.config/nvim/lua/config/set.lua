@@ -8,6 +8,8 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
+vim.opt.conceallevel = 1
+
 vim.opt.wrap = false
 
 vim.opt.swapfile = false
