@@ -106,8 +106,9 @@ alias nuget="mono /usr/local/bin/nuget.exe"
 alias clip='xclip -selection c'
 alias zz='z -'
 alias cd='z'
+alias sudo='sudo '
     
-if [[ "$TERM" = alacritty ]]; then
+if [[ "$TERM" = alacritty ]] || [[ "$TERM" = xterm-kitty ]]; then
     exec tmux
 fi
 
