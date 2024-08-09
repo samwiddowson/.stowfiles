@@ -9,19 +9,17 @@ fix clipboard copy/paste (not sure if this is a local system issue or an nvim co
 ## General
 * install alacritty (if straight linux)
 * install nvim
-  * If using Ubuntu it can be with `sudo snap install nvim --classic`
-  * better to just build from source though
-* update apt `sudo apt update`
 * install nvm
   * and node through this
-* install build-essentials: `sudo apt install build-essential`
-* install ripgrep: `sudo apt install ripgrep`
+* install ripgrep
 * install prettierd: `npm i -g @fsouza/prettierd`
-* install oh-my-posh (I don't think the required stuff is included here)
+* install oh-my-posh
 * install tmux
   * also install [tpm (tmux plugin manager)](https://github.com/tmux-plugins/tpm)
 * install [ stow ](https://www.gnu.org/software/stow) from [ source ](https://ftp.gnu.org/gnu/stow)
 * install yazi
+* install eza
+* install zoxide
 
 
 ## tmux
