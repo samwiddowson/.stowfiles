@@ -43,6 +43,7 @@ alias ll="eza -l --header --icons --git"
 alias lt="eza -lT --header --icons --git"
 alias neofetch=fastfetch
 alias cm="cmatrix -ab"
+alias go="z ~/writing/valirsCrossing/ && vim ."
 
 
 if [[ "$TERM" == alacritty ]]; then
