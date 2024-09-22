@@ -107,11 +107,13 @@ alias clip='xclip -selection c'
 alias zz='z -'
 alias cd='z'
 alias sudo='sudo '
+alias onv="NVIM_APPNAME=obsidian.nvim nvim"
+alias startssh="sudo systemctl start ssh.service"
     
 if [[ "$TERM" = alacritty ]] || [[ "$TERM" = xterm-kitty ]]; then
     exec tmux
 fi
 
 if [[ "$TERM" == linux ]]; then
-    hyfetch
+    fastfetch
 fi
