@@ -28,6 +28,18 @@ return {
                 name = "ValirsCrossing",
                 path = "~/writing/valirsCrossing",
             },
+            {
+                name = "Nano2024",
+                path = "~/writing/nano2024",
+            },
+            {
+                name = "TheDoomsdayBell",
+                path = "~/writing/theDoomsdayBell",
+            },
+            {
+                name = "TheNexusJam",
+                path = "~/writing/theNexusJam",
+            },
         },
 
         -- see below for full list of options 👇

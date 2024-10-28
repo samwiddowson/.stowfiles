@@ -1,1 +1,3 @@
 /*tmux/.config/tmux/plugins/**
+*.log
+**/lazy-lock.json
