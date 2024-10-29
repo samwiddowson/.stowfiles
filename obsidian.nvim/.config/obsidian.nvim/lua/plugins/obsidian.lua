@@ -44,6 +44,10 @@ return {
                 name = "JovianSkies",
                 path = "~/writing/jovianSkies",
             },
+            {
+                name = "Fraggle",
+                path = "~/writing/fraggle",
+            },
         },
 
         -- see below for full list of options 👇
