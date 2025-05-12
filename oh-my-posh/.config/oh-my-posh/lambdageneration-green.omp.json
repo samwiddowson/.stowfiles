@@ -6,7 +6,7 @@
       "segments": [
         {
           "background": "#292929",
-          "foreground": "#acff5e",
+          "foreground": "#a7c080",
           "leading_diamond": "\u256d\u2500\ue0b2",
           "style": "diamond",
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} \ue0b1",
@@ -14,7 +14,7 @@
         },
         {
           "background": "#292929",
-          "foreground": "#acff5e",
+          "foreground": "#a7c080",
           "properties": {
             "always_enabled": true,
             "style": "austin",
@@ -33,7 +33,7 @@
         },
         {
           "background": "#292929",
-          "foreground": "#acff5e",
+          "foreground": "#a7c080",
           "properties": {
             "style": "full",
             "trailing_diamond": "\ue0c6"
@@ -54,7 +54,7 @@
           "foreground_templates": [
             "{{ if eq \"Full\" .State.String }}#292929{{ end }}",
             "{{ if eq \"Charging\" .State.String }}#40c4ff{{ end }}",
-            "{{ if eq \"Discharging\" .State.String }}#acff5e{{ end }}"
+            "{{ if eq \"Discharging\" .State.String }}#a7c080{{ end }}"
           ],
           "properties": {
             "charged_icon": "\uf240 ",
@@ -71,7 +71,7 @@
           "background_templates": [
             "{{ if gt .Code 0 }}#292929{{ end }}"
           ],
-          "foreground": "#acff5e",
+          "foreground": "#a7c080",
           "properties": {
             "always_enabled": true,
             "display_exit_code": true
@@ -89,15 +89,15 @@
       "segments": [
         {
           "background": "#292929",
-          "foreground": "#acff5e",
+          "foreground": "#a7c080",
           "leading_diamond": "\ue0b6",
           "style": "diamond",
-          "template": " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}@{{ .HostName }} <#acff5e>\ue0b3</> ",
+          "template": " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}@{{ .HostName }} <#a7c080>\ue0b3</> ",
           "type": "session"
         },
         {
           "background": "#292929",
-          "foreground": "#acff5e",
+          "foreground": "#a7c080",
           "properties": {
             "time_format": "15:04:05, _2"
           },
@@ -117,7 +117,7 @@
           "properties": {
             "always_enabled": true
           },
-          "background": "#acff5e",
+          "background": "#a7c080",
           "foreground": "#292929",
           "style": "diamond",
           "leading_diamond": "\u2570\u2500\ue0b6",

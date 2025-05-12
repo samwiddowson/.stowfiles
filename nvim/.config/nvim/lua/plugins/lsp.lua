@@ -1,56 +1,150 @@
 return
 {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
+    branch = 'v4.x',
     dependencies = {
-        --- Uncomment the two plugins below if you want to manage the language servers from neovim
         { 'williamboman/mason.nvim' },
         { 'williamboman/mason-lspconfig.nvim' },
 
         { 'neovim/nvim-lspconfig' },
+        { 'nvimtools/none-ls.nvim' },
         { 'hrsh7th/nvim-cmp' },
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'L3MON4D3/LuaSnip' },
     },
     config = function()
-        local lsp_zero = require('lsp-zero')
+        local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
+        local event = "BufWritePre" -- or "BufWritePost"
+        local async = event == "BufWritePost"
 
+        local lsp_zero = require('lsp-zero')
         lsp_zero.on_attach(function(client, bufnr)
-            -- see :help lsp-zero-keybindings
-            -- to learn the available actions
             lsp_zero.default_keymaps({ buffer = bufnr })
+            if client.supports_method("textDocument/formatting") then
+                vim.keymap.set("n", "<Leader>f", function()
+                    vim.lsp.buf.format({ bufnr = bufnr, async = true })
+                end, { buffer = bufnr, desc = "[lsp] format" })
+
+                -- format on save
+                vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
+                vim.api.nvim_create_autocmd(event, {
+                    buffer = bufnr,
+                    group = group,
+                    callback = function()
+                        vim.lsp.buf.format({ bufnr = bufnr, async = async })
+                    end,
+                    desc = "[lsp] format on save",
+                })
+            end
+
+            if client.supports_method("textDocument/rangeFormatting") then
+                vim.keymap.set("x", "<Leader>f", function()
+                    vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+                end, { buffer = bufnr, desc = "[lsp] format" })
+            end
         end)
 
+        local null_ls = require('null-ls')
+        null_ls.setup({
+            sources = {
+                null_ls.builtins.formatting.prettierd.with({
+                    filetypes = { "javascript", "typescript", "css", "html", "json", "yaml", "markdown", "vue" }, -- customize as needed
+                }),
+            }
+        })
+
         require('mason').setup({})
+
+        local registry = require('mason-registry')
+        registry.refresh()
         require('mason-lspconfig').setup({
-            ensure_installed = { 'tsserver', 'eslint', 'lua_ls', 'volar', 'emmet_language_server', 'tailwindcss' },
+
+            ensure_installed = {
+                'lua_ls',
+                'eslint',
+                'emmet_language_server',
+                'tailwindcss',
+                'ts_ls',
+                'volar',
+                'angularls',
+                'jsonls'
+            },
             handlers = {
-                --	lsp_zero.default_setup,
+                lsp_zero.default_setup,
                 function(server_name)
                     require('lspconfig')[server_name].setup({})
                 end,
 
-                volar = function()
-                    require 'lspconfig'.volar.setup {
-                        filetypes = { 'vue', 'json' }
-                    }
+                jsonls = function()
+                    require('lspconfig').jsonls.setup({
+                        filetypes = { 'json' }
+                    })
                 end,
 
-                tsserver = function()
-                    require('lspconfig').tsserver.setup {
-                        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', },
-                        cmd = { "typescript-language-server", "--stdio" },
-                        root_dir = function() return vim.loop.cwd() end
-                    }
+                volar = function()
+                    require('lspconfig').volar.setup({
+                        filetypes = { 'vue' }
+                    })
                 end,
 
                 emmet_language_server = function()
-                    require 'lspconfig'.emmet_language_server.setup {
-                        filetypes = { "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "typescriptreact", "vue" }
-                    }
+                    require('lspconfig').emmet_language_server.setup({
+                        filetypes = {
+                            'css',
+                            'html',
+                            'javascriptreact',
+                            'less',
+                            'sass',
+                            'scss',
+                            'typescriptreact',
+                            'vue'
+                        }
+                    })
+                end,
+
+
+                ts_ls = function()
+                    require('lspconfig').ts_ls.setup({
+                        init_options = {
+                            plugins = { -- I think this was my breakthrough that made it work
+                                {
+                                    name = "@vue/typescript-plugin",
+                                    location = vim.fn.stdpath 'data' ..
+                                        '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+                                    languages = { "vue" },
+                                },
+                            },
+                        },
+                        filetypes = {
+                            'css',
+                            'html',
+                            'javascriptreact',
+                            'less',
+                            'sass',
+                            'scss',
+                            'typescriptreact',
+                            'vue'
+                        },
+                        root_dir = function() return vim.loop.cwd() end,
+                    })
                 end,
 
             }
+        })
+
+        local cmp = require('cmp')
+
+        cmp.setup({
+            sources = {
+                { name = 'nvim_lsp' },
+            },
+            snippet = {
+                expand = function(args)
+                    -- You need Neovim v0.10 to use vim.snippet
+                    vim.snippet.expand(args.body)
+                end,
+            },
+            mapping = cmp.mapping.preset.insert({}),
         })
     end
 }
