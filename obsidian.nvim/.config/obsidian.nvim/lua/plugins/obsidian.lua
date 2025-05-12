@@ -48,6 +48,10 @@ return {
                 name = "Fraggle",
                 path = "~/writing/fraggle",
             },
+            {
+                name = "BeneathTheEaglesWing",
+                path = "~/writing/beneathTheEaglesWing",
+            },
         },
 
         -- see below for full list of options 👇
