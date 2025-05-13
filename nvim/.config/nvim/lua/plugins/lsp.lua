@@ -68,7 +68,8 @@ return
                 'ts_ls',
                 'volar',
                 'angularls',
-                'jsonls'
+                'jsonls',
+                'markdown_oxide'
             },
             handlers = {
                 lsp_zero.default_setup,
