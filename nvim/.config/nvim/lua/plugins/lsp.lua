@@ -57,6 +57,7 @@ return
 
         local registry = require('mason-registry')
         registry.refresh()
+
         require('mason-lspconfig').setup({
 
             ensure_installed = {
@@ -74,63 +75,63 @@ return
                 function(server_name)
                     require('lspconfig')[server_name].setup({})
                 end,
-
-                jsonls = function()
-                    require('lspconfig').jsonls.setup({
-                        filetypes = { 'json' }
-                    })
-                end,
-
-                volar = function()
-                    require('lspconfig').volar.setup({
-                        filetypes = { 'vue' }
-                    })
-                end,
-
-                emmet_language_server = function()
-                    require('lspconfig').emmet_language_server.setup({
-                        filetypes = {
-                            'css',
-                            'html',
-                            'javascriptreact',
-                            'less',
-                            'sass',
-                            'scss',
-                            'typescriptreact',
-                            'vue'
-                        }
-                    })
-                end,
-
-
-                ts_ls = function()
-                    require('lspconfig').ts_ls.setup({
-                        init_options = {
-                            plugins = { -- I think this was my breakthrough that made it work
-                                {
-                                    name = "@vue/typescript-plugin",
-                                    location = vim.fn.stdpath 'data' ..
-                                        '/mason/packages/vue-language-server/node_modules/@vue/language-server',
-                                    languages = { "vue" },
-                                },
-                            },
-                        },
-                        filetypes = {
-                            'css',
-                            'html',
-                            'javascriptreact',
-                            'less',
-                            'sass',
-                            'scss',
-                            'typescriptreact',
-                            'vue'
-                        },
-                        root_dir = function() return vim.loop.cwd() end,
-                    })
-                end,
-
             }
         })
+
+        require('lspconfig').jsonls.setup({
+            filetypes = { 'json' }
+        })
+
+        require('lspconfig').volar.setup({
+            init_options = {
+                vue = {
+                    hybridMode = false,
+                },
+            },
+            filetypes = { 'vue' }
+        })
+
+        require('lspconfig').emmet_language_server.setup({
+            filetypes = {
+                'css',
+                'html',
+                'javascriptreact',
+                'less',
+                'sass',
+                'scss',
+                'typescriptreact',
+                'vue'
+            }
+        })
+
+
+        local vueLanguageServerLocation = vim.fn.stdpath 'data' ..
+            '/mason/packages/vue-language-server/node_modules/@vue/language-server'
+
+        -- print('vueLanguageServerLocation = ' .. vueLanguageServerLocation)
+        require('lspconfig').ts_ls.setup({
+            init_options = {
+                plugins = { -- I think this was my breakthrough that made it work
+                    {
+                        name = "@vue/typescript-plugin",
+                        location = vueLanguageServerLocation,
+                        languages = { "vue" },
+                    },
+                },
+            },
+            filetypes = {
+                'css',
+                'html',
+                'javascriptreact',
+                'less',
+                'sass',
+                'scss',
+                'typescriptreact',
+                'vue'
+            },
+            root_dir = function() return vim.loop.cwd() end,
+        })
+
 
         local cmp = require('cmp')
 
