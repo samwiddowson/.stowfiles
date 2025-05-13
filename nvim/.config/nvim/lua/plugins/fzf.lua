@@ -10,5 +10,6 @@ return {
         vim.keymap.set('n', '<leader>m', fzf.marks, {})
         vim.keymap.set('n', '<leader>b', fzf.buffers, {})
         vim.keymap.set('n', '<leader>i', fzf.live_grep, {})
+        vim.keymap.set('n', '<leader>k', fzf.keymaps, {})
     end
 }
