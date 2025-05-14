@@ -69,7 +69,8 @@ return
                 'volar',
                 'angularls',
                 'jsonls',
-                'markdown_oxide'
+                'markdown_oxide',
+                'jdtls'
             },
             handlers = {
                 lsp_zero.default_setup,
@@ -131,6 +132,12 @@ return
                 'vue'
             },
             root_dir = function() return vim.loop.cwd() end,
+        })
+
+        require('lspconfig').jdtls.setup({
+            cmd = {
+                'jdtls'
+            }
         })
 
 
