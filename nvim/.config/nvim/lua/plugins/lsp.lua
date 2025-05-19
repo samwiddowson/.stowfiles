@@ -64,10 +64,11 @@ return
                 'lua_ls',
                 'eslint',
                 'emmet_language_server',
+                'html',
                 'tailwindcss',
                 'ts_ls',
                 'volar',
-                'angularls',
+                -- 'angularls',
                 'jsonls',
                 'markdown_oxide'
             },
