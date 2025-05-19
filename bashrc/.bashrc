@@ -97,25 +97,25 @@ function yy() {
 }
 
 eval "$(oh-my-posh init bash --config '~/.config/oh-my-posh/lambdageneration-green.omp.json')"
-eval "$(zoxide init bash)"
+# this isn't running and it's also breaking `cd`, so commenting it out for now
+# eval "$(zoxide init bash)"
+# alias zz='z -'
+# alias cd='z'
+
+complete -C /usr/bin/terraform terraform
 
 alias vim="nvim"
 alias ls="eza"
 alias ll="eza -l --header --icons --git"
 alias lt="eza -lT --header --icons --git"
-alias nuget="mono /usr/local/bin/nuget.exe"
 alias clip='xclip -selection c'
-alias zz='z -'
-alias cd='z'
 alias sudo='sudo '
 alias onv="NVIM_APPNAME=obsidian.nvim nvim"
 alias startssh="sudo systemctl start ssh.service"
 alias keeb="sudo chmod a+rw /dev/keebio_keyboard"
     
-if [[ "$TERM" = alacritty ]] || [[ "$TERM" = xterm-kitty ]]; then
+if [[ "$TERM" == xterm-256color ]]; then
     exec tmux
 fi
 
-if [[ "$TERM" == linux ]]; then
-    fastfetch
-fi
+NVIM_APPNAME=nvim
