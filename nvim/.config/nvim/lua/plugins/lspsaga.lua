@@ -9,9 +9,9 @@ return {
         vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
         vim.keymap.set('n', 'gd', '<Cmd>Lspsaga finder<CR>', opts)
         vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
-        vim.keymap.set('n', 'ggp', '<Cmd>Lspsaga goto_definition<CR>', opts)
+        vim.keymap.set('n', 'gop', '<Cmd>Lspsaga goto_definition<CR>', opts)
         vim.keymap.set('n', 'gt', '<Cmd>Lspsaga peek_type_definition<CR>', opts)
-        vim.keymap.set('n', 'ggt', '<Cmd>Lspsaga goto_type_definition<CR>', opts)
+        vim.keymap.set('n', 'got', '<Cmd>Lspsaga goto_type_definition<CR>', opts)
         vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 
         vim.keymap.set('n', '<C-o>', '<Cmd>Lspsaga outline<CR>', opts)
