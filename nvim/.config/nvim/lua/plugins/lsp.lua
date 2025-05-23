@@ -63,6 +63,7 @@ return
             ensure_installed = {
                 'lua_ls',
                 'eslint',
+                'terraformls',
                 'emmet_language_server',
                 'html',
                 'tailwindcss',
