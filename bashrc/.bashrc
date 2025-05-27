@@ -113,6 +113,7 @@ alias sudo='sudo '
 alias onv="NVIM_APPNAME=obsidian.nvim nvim"
 alias startssh="sudo systemctl start ssh.service"
 alias keeb="sudo chmod a+rw /dev/keebio_keyboard"
+alias updatekeys="cp /mnt/c/Users/Sam.Widdowson/Downloads/iris_lm_k_rev__1.layout.json /home/sam/.stowfiles/via-settings/iris_lm_k_rev__1.layout_scw.json"
     
 if [[ "$TERM" == xterm-256color ]]; then
     exec tmux
