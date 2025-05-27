@@ -55,8 +55,7 @@ return
 
         require('mason').setup({})
 
-        local registry = require('mason-registry')
-        registry.refresh()
+        require('mason-registry').refresh()
 
         require('mason-lspconfig').setup({
 
@@ -68,7 +67,7 @@ return
                 'html',
                 'tailwindcss',
                 'ts_ls',
-                'volar',
+                'vue_ls',
                 -- 'angularls',
                 'jsonls',
                 'markdown_oxide',
@@ -112,7 +111,6 @@ return
         local vueLanguageServerLocation = vim.fn.stdpath 'data' ..
             '/mason/packages/vue-language-server/node_modules/@vue/language-server'
 
-        -- print('vueLanguageServerLocation = ' .. vueLanguageServerLocation)
         require('lspconfig').ts_ls.setup({
             init_options = {
                 plugins = { -- I think this was my breakthrough that made it work
