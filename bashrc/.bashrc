@@ -110,6 +110,7 @@ alias cd='z'
 alias sudo='sudo '
 alias onv="NVIM_APPNAME=obsidian.nvim nvim"
 alias startssh="sudo systemctl start ssh.service"
+alias keeb="sudo chmod a+rw /dev/keebio_keyboard"
     
 if [[ "$TERM" = alacritty ]] || [[ "$TERM" = xterm-kitty ]]; then
     exec tmux
