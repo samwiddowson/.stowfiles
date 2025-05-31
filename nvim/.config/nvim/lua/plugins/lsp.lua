@@ -67,7 +67,7 @@ return
                 'html',
                 'tailwindcss',
                 'ts_ls',
-                'volar',
+                'vue_ls',
                 -- 'angularls',
                 'jsonls',
                 'markdown_oxide'
