@@ -83,7 +83,7 @@ export NVM_DIR="$HOME/.config/nvm"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-export DOTNET_ROOT=$HOME/.dotnet
+export DOTNET_ROOT=/usr/share/dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 export PATH=$PATH:~/.local/bin
 

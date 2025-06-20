@@ -70,7 +70,8 @@ return
                 'vue_ls',
                 -- 'angularls',
                 'jsonls',
-                'markdown_oxide'
+                'markdown_oxide',
+                'zls'
             },
             handlers = {
                 lsp_zero.default_setup,
@@ -106,7 +107,6 @@ return
             }
         })
 
-
         local vueLanguageServerLocation = vim.fn.stdpath 'data' ..
             '/mason/packages/vue-language-server/node_modules/@vue/language-server'
 
@@ -134,6 +134,7 @@ return
             root_dir = function() return vim.loop.cwd() end,
         })
 
+        vim.lsp.enable('csharp_ls')
 
         local cmp = require('cmp')
 
