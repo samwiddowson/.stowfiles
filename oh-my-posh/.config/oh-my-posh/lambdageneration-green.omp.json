@@ -10,7 +10,7 @@
                         "cache_duration": "none"
                     },
                     "leading_diamond": "\u256d\u2500\ue0b2",
-                    "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} \ue0b1",
+                    "template": " {{ if .WSL }}WSL at {{ end }}\u2b9d \ue0b1",
                     "foreground": "#a7c080",
                     "background": "#292929",
                     "type": "os",

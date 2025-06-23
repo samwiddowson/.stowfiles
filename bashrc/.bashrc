@@ -102,9 +102,9 @@ function yy() {
 
 eval "$(oh-my-posh init bash --config '~/.config/oh-my-posh/lambdageneration-green.omp.json')"
 # this isn't running and it's also breaking `cd`, so commenting it out for now
-# eval "$(zoxide init bash)"
-# alias zz='z -'
-# alias cd='z'
+eval "$(zoxide init bash)"
+alias zz='z -'
+alias cd='z'
 
 complete -C /usr/bin/terraform terraform
 
@@ -156,3 +156,4 @@ function letsgo(){
     export Subs__DB_NAME=cca-$branch
 }
 
+fastfetch
