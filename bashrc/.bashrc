@@ -19,9 +19,11 @@ shopt -s checkwinsize
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+PROMPT_COMMAND='history -a; history -n'
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=4096
-HISTFILESIZE=4096
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -86,6 +88,7 @@ export NVM_DIR="$HOME/.config/nvm"
 export DOTNET_ROOT=/usr/share/dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:/home/sam/src/zig/zls/zig-out/bin
 
 function yy() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
