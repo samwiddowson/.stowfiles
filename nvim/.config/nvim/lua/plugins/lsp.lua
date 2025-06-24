@@ -11,6 +11,8 @@ return
         { 'hrsh7th/nvim-cmp' },
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'L3MON4D3/LuaSnip' },
+
+        { 'Decodetalkers/csharpls-extended-lsp.nvim' },
     },
     config = function()
         local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
@@ -68,10 +70,9 @@ return
                 'tailwindcss',
                 'ts_ls',
                 'vue_ls',
-                -- 'angularls',
                 'jsonls',
                 'markdown_oxide',
-                'jdtls'
+                'csharp_ls'
             },
             handlers = {
                 lsp_zero.default_setup,
@@ -139,6 +140,18 @@ return
                 'jdtls'
             }
         })
+
+
+        local config = {
+            handlers = {
+                ["textDocument/definition"] = require('csharpls_extended').handler,
+                ["textDocument/typeDefinition"] = require('csharpls_extended').handler,
+            },
+            cmd = { "csharp-ls" },
+            -- rest of your settings
+        }
+        require 'lspconfig'.csharp_ls.setup(config)
+        require("csharpls_extended").buf_read_cmd_bind()
 
 
         local cmp = require('cmp')
