@@ -1,5 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# ~/.bashrc: executed by bash(1) for non-login shells. see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
 # If not running interactively, don't do anything
@@ -114,11 +113,21 @@ alias sudo='sudo '
 alias onv="NVIM_APPNAME=obsidian.nvim nvim"
 alias startssh="sudo systemctl start ssh.service"
 alias keeb="sudo chmod a+rw /dev/keebio_keyboard"
-    
-if [[ "$TERM" = alacritty ]] || [[ "$TERM" = xterm-kitty ]]; then
-    exec tmux
-fi
+alias updatekeys="cp /mnt/c/Users/Sam.Widdowson/Downloads/iris_lm_k_rev__1.layout.json /home/sam/.stowfiles/via-settings/iris_lm_k_rev__1.layout_scw.json"
+alias getip="curl ifconfig.me | clip"
 
-if [[ "$TERM" == linux ]]; then
+# if [[ "$TERM" = alacritty ]] || [[ "$TERM" = xterm-kitty ]]; then
+#     exec tmux
+# fi
+function devenv(){
+    SESSION_NAME="devenv"
+    tmux new-session -d -s "$SESSION_NAME" -n neovim 'nvim .'
+    tmux new-window -t "$SESSION_NAME:" -n shell
+    tmux display -t "$SESSION_NAME:editor"
+
+    tmux attach-session -t "$SESSION_NAME"
+}
+
+# if [[ "$TERM" == linux ]]; then
     fastfetch
-fi
+# fi
