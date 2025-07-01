@@ -1,16 +1,15 @@
 # Sam's dotfiles -- stowed
 
-## TO FIX
+## stow
 
-fix clipboard copy/paste (not sure if this is a local system issue or an nvim config issue)
+`pacman -S stow`
 
-## If using WSL
-
-- install wsl via powershell (refer to Microsoft documentation)
+usage: from within the .stowfiles directory, `stow nvim` will symlink `.stowfiles/nvim/.config/nvim` to `~/.config/nvim`
 
 ## General
 
-- install alacritty (if straight linux)
+- install stow (see above)
+- install kitty (if straight linux)
 - install nvim
 - install nvm
   - and node through this
@@ -31,10 +30,4 @@ Remember: in tmux, before sourcing the new file, it will be Ctrl-B, r to source 
 
 After that the tmux leader is Ctrl+Space.
 
-Use Ctrl+Space, I (capital I) to install tmux plugins
-
-## stow
-
-usage: from within the .stowfiles directory, `stow nvim` will symlink the contents of the nvim subdirectory to the home directory
-
-i.e. create the .config/nvim directory as a symlink to the one in .stowfiles
+Use `Ctrl+Space, I` (capital I) to install tmux plugins
