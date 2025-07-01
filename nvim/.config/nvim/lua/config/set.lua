@@ -28,7 +28,7 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
-vim.opt.clipboard = ""
+vim.opt.clipboard = "unnamed"
 
 -- sync with system clipboard on focus
 vim.api.nvim_create_autocmd({ "FocusGained" }, {
@@ -41,4 +41,3 @@ vim.api.nvim_create_autocmd({ "FocusLost" }, {
     pattern = { "*" },
     command = [[call setreg("+", getreg("@"))]],
 })
-
