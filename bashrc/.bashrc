@@ -90,6 +90,7 @@ export NVM_DIR="$HOME/.config/nvm"
 export DOTNET_ROOT=/usr/share/dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 export PATH=$PATH:~/.local/bin
+# source /usr/share/nvm/init-nvm.sh
 
 function yy() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
