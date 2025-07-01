@@ -4,7 +4,10 @@ return {
     priority = 1000,
     dependencies = {
         { "blazkowolf/gruber-darker.nvim" },
-        { "neanias/everforest-nvim" }
+        { "neanias/everforest-nvim" },
+        { "catppuccin/nvim" },
+        { "xero/miasma.nvim" },
+        { 'sainnhe/gruvbox-material' },
     },
     config = function()
         require("everforest").setup({

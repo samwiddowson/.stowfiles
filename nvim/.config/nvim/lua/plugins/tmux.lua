@@ -1,13 +1,6 @@
 return {
-
     'nathom/tmux.nvim',
     config = function()
-        -- local tmux = require "tmux"
-        -- vim.keymap.set("n", "M-h", tmux.)
-        -- vim.keymap.set("n", "M-l", tmux.move_right())
-        -- vim.keymap.set("n", "M-k", tmux.move_up())
-        -- vim.keymap.set("n", "M-j", tmux.move_down())
-
         local map = vim.api.nvim_set_keymap
         map("n", "<Left>", [[<cmd>lua require('tmux').move_left()<cr>]], {})
         map("n", "<Down>", [[<cmd>lua require('tmux').move_down()<cr>]], {})
