@@ -1,39 +1,52 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeOpen)
+local map = vim.keymap.set
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+map("n", "<leader>pv", vim.cmd.NvimTreeOpen)
 
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("x", "<leader>p", "\"_dP")
+map("n", "J", "mzJ`z")
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+map("x", "<leader>p", "\"_dP")
 
-vim.keymap.set("n", "<leader><leader>pp", "\"+p")
+map("n", "<leader>y", "\"+y")
+map("v", "<leader>y", "\"+y")
+map("n", "<leader>Y", "\"+Y")
 
-vim.keymap.set("v", "<C-c>", "\"+yi")
-vim.keymap.set("v", "<C-x>", "\"+c")
-vim.keymap.set("v", "<C-v>", "c<Esc>\"+p")
-vim.keymap.set("i", "<C-v>", "<Esc>\"+pa")
+map("n", "<leader><leader>pp", "\"+p")
 
-vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "q:", "<nop>")
+map("v", "<C-c>", "\"+yi")
+map("v", "<C-x>", "\"+c")
+map("v", "<C-v>", "c<Esc>\"+p")
+map("i", "<C-v>", "<Esc>\"+pa")
 
--- vim.keymap.set("n", "<leader>f", function()
+map("n", "Q", "<nop>")
+map("n", "q:", "<nop>")
+
+-- map("n", "<leader>f", function()
 --     vim.lsp.buf.format()
 -- end)
 
--- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
--- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
--- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
--- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+-- map("n", "<C-k>", "<cmd>cnext<CR>zz")
+-- map("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- map("n", "<leader>k", "<cmd>lnext<CR>zz")
+-- map("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+-- map("v", "<leader>s", "\"+y:%s/<C-V>/<C-V>/gI<Left><Left><Left>")
+map("v", "<leader>s", function()
+    vim.cmd('normal! "+y')
+    local selected = vim.fn.getreg("+")
+    local cmd = ':%s/' .. selected .. '/' .. selected .. '/gI<Left><Left><Left>'
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(cmd, true, false, true), 'n', false)
+end)
+
+map("n", "<leader>nn", function() --toggle relative vs absolute line numbers
+    vim.wo.relativenumber = not vim.wo.relativenumber
+end)
