@@ -5,7 +5,7 @@
   "layers": [
     [
       "KC_GRV",
-      "KC_QUOT",
+      "S(KC_COMM)",
       "KC_LBRC",
       "S(KC_LBRC)",
       "S(KC_9)",
@@ -35,7 +35,7 @@
       "KC_SPC",
       "KC_HOME",
       "KC_BSPC",
-      "KC_QUOT",
+      "S(KC_DOT)",
       "KC_RBRC",
       "S(KC_RBRC)",
       "S(KC_0)",
