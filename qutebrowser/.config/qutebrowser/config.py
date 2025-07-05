@@ -27,13 +27,13 @@ c.completion.open_categories = ['searchengines', 'quickmarks', 'bookmarks', 'his
 
 config.load_autoconfig() # load settings done via the gui
 
-c.auto_save.session = True # save tabs on quit/restart
+c.auto_save.session = False # save tabs on quit/restart
 
 # keybinding changes
-config.bind("<y><o>", "yank inline [[{url}][{title}]]")
 config.bind("<y><i>", "yank inline [{title}]({url})")
+config.bind("<y><o>", "yank inline [[{url}][{title}]]")
 config.bind('h', 'history')
-config.bind('H', 'history -t')
+config.bind('<ctrl-h>', 'history -t')
 config.bind('cs', 'cmd-set-text -s :config-source')
 config.bind('tH', 'config-cycle tabs.show multiple never')
 config.bind('sH', 'config-cycle statusbar.show always never')
@@ -47,6 +47,8 @@ config.bind('tT', 'config-cycle tabs.position top left')
 config.bind('gJ', 'tab-move +')
 config.bind('gK', 'tab-move -')
 config.bind('gm', 'tab-move')
+config.bind('<Ctrl+/>', 'hint links spawn --detach mpv {hint-url}')
+
 
 # dark mode setup
 c.colors.webpage.darkmode.enabled = True
@@ -54,8 +56,9 @@ c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 c.colors.webpage.darkmode.policy.images = 'never'
 config.set('colors.webpage.darkmode.enabled', False, 'file://*')
 
+
 # styles, cosmetics
-# c.content.user_stylesheets = ["~/.config/qutebrowser/styles/youtube-tweaks.css"]
+c.content.user_stylesheets = ["~/.config/qutebrowser/styles/youtube-tweaks.css"]
 c.tabs.padding = {'top': 5, 'bottom': 5, 'left': 9, 'right': 9}
 c.tabs.indicator.width = 0 # no tab indicators
 c.window.transparent = True # apparently not needed
