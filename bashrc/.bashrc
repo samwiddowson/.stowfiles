@@ -115,6 +115,7 @@ alias startssh="sudo systemctl start ssh.service"
 alias keeb="sudo chmod a+rw /dev/keebio_keyboard"
 alias updatekeys="cp /mnt/c/Users/Sam.Widdowson/Downloads/iris_lm_k_rev__1.layout.json /home/sam/.stowfiles/via-settings/iris_lm_k_rev__1.layout_scw.json"
 alias getip="curl ifconfig.me | clip"
+alias fzfh="cat ~/.bash_history | fzf | sh"
 
 # if [[ "$TERM" = alacritty ]] || [[ "$TERM" = xterm-kitty ]]; then
 #     exec tmux
