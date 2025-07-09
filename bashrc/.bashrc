@@ -129,6 +129,14 @@ function devenv(){
     tmux attach-session -t "$SESSION_NAME"
 }
 
+function yta() {
+    mpv --ytdl-format=bestaudio ytdl://ytsearch:"$*"
+}
+
+function fuck() {
+  sudo $(fc -ln -1)
+}
+
 # if [[ "$TERM" == linux ]]; then
     fastfetch
 # fi
