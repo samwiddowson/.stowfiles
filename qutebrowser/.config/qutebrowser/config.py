@@ -48,6 +48,11 @@ config.bind('gJ', 'tab-move +')
 config.bind('gK', 'tab-move -')
 config.bind('gm', 'tab-move')
 config.bind('<Ctrl+/>', 'hint links spawn --detach mpv {hint-url}')
+config.bind('<alt-h>', 'back');
+config.bind('<alt-l>', 'forward');
+config.bind('<alt-j>', 'tab-next');
+config.bind('<alt-k>', 'tab-prev');
+config.bind('<ctrl-shift-n>', 'open -t https://start.duckduckgo.com/')
 
 
 # dark mode setup

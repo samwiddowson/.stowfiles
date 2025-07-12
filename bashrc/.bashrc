@@ -140,3 +140,7 @@ function fuck() {
 # if [[ "$TERM" == linux ]]; then
     fastfetch
 # fi
+
+# if [[ "$TERM" = alacritty ]] || [[ "$TERM" = xterm-kitty ]]; then
+#     exec tmux
+# fi
