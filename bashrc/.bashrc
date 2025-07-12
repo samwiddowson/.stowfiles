@@ -117,9 +117,6 @@ alias updatekeys="cp /mnt/c/Users/Sam.Widdowson/Downloads/iris_lm_k_rev__1.layou
 alias getip="curl ifconfig.me | clip"
 alias fzfh="cat ~/.bash_history | fzf | sh"
 
-# if [[ "$TERM" = alacritty ]] || [[ "$TERM" = xterm-kitty ]]; then
-#     exec tmux
-# fi
 function devenv(){
     SESSION_NAME="devenv"
     tmux new-session -d -s "$SESSION_NAME" -n neovim 'nvim .'
