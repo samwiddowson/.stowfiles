@@ -42,3 +42,5 @@ vim.api.nvim_create_autocmd({ "FocusLost" }, {
     command = [[call setreg("+", getreg("@"))]],
 })
 
+vim.opt.foldmethod = "marker"
+vim.opt.foldmarker = "#region,#endregion"
