@@ -11,6 +11,7 @@ return
         { 'hrsh7th/nvim-cmp' },
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'L3MON4D3/LuaSnip' },
+        { 'Hoffs/omnisharp-extended-lsp.nvim' }
     },
     config = function()
         local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
@@ -134,7 +135,23 @@ return
             root_dir = function() return vim.loop.cwd() end,
         })
 
-        vim.lsp.enable('csharp_ls')
+
+        require "lspconfig".omnisharp.setup({
+            cmd = {
+                "/home/sam/.local/share/nvim/mason/bin/omnisharp-mono",
+                "--languageserver",
+                "--hostPID",
+                tostring(vim.fn.getpid())
+            },
+            root_dir = require "lspconfig".util.root_pattern("*.sln", "*.csproj", ".git"),
+            enable_editorconfig_support = true,
+            enable_roslyn_analyzers = true,
+            organize_imports_on_format = true,
+            enable_import_completion = true,
+            handlers = {
+                ["textDocument/definition"] = require("omnisharp_extended").handler,
+            },
+        })
 
         local cmp = require('cmp')
 
