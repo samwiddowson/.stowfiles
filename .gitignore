@@ -1,4 +1,4 @@
 /*tmux/.config/tmux/plugins/**
 *.log
 **/lazy-lock.json
-qutebrowser/.config/qutebrowser/__pycache__/**
+/qutebrowser/.config/qutebrowser/__pycache__/**
