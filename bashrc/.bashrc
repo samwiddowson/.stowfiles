@@ -88,8 +88,7 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
-[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
+eval "$(fzf --bash)"
 
 export DOTNET_ROOT=/usr/share/dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
@@ -122,7 +121,6 @@ alias sudo='sudo '
 alias onv="NVIM_APPNAME=obsidian.nvim nvim"
 alias startssh="sudo systemctl start ssh.service"
 alias keeb="sudo chmod a+rw /dev/keebio_keyboard"
-alias updatekeys="cp /mnt/c/Users/Sam.Widdowson/Downloads/iris_lm_k_rev__1.layout.json /home/sam/.stowfiles/via-settings/iris_lm_k_rev__1.layout_scw.json"
 alias getip="curl ifconfig.me | clip"
 
 # if [[ "$TERM" == xterm-256color ]]; then
