@@ -8,8 +8,8 @@ return
 
         { 'neovim/nvim-lspconfig' },
         { 'nvimtools/none-ls.nvim' },
-        { 'hrsh7th/nvim-cmp' },
-        { 'hrsh7th/cmp-nvim-lsp' },
+        -- { 'hrsh7th/nvim-cmp' },
+        -- { 'hrsh7th/cmp-nvim-lsp' },
         { 'L3MON4D3/LuaSnip' },
 
         -- { 'Decodetalkers/csharpls-extended-lsp.nvim' },
@@ -18,6 +18,7 @@ return
         local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
         local event = "BufWritePre" -- or "BufWritePost"
         local async = event == "BufWritePost"
+
 
         local lsp_zero = require('lsp-zero')
         lsp_zero.on_attach(function(client, bufnr)
@@ -147,7 +148,6 @@ return
             }
         })
 
-
         -- local config = {
         --     handlers = {
         --         ["textDocument/definition"] = require('csharpls_extended').handler,
@@ -159,20 +159,36 @@ return
         -- require 'lspconfig'.csharp_ls.setup(config)
         -- require("csharpls_extended").buf_read_cmd_bind()
 
+        -- local cmp = require('cmp')
+        --
+        -- cmp.setup({
+        --     sources = {
+        --         { name = 'nvim_lsp' },
+        --     },
+        --     snippet = {
+        --         expand = function(args)
+        --             -- You need Neovim v0.10 to use vim.snippet
+        --             vim.snippet.expand(args.body)
+        --         end,
+        --     },
+        --     mapping = cmp.mapping.preset.insert({}),
+        -- })
 
-        local cmp = require('cmp')
+        vim.api.nvim_create_autocmd('LspAttach', {
+            callback = function(ev)
+                local client = vim.lsp.get_client_by_id(ev.data.client_id)
+                if client:supports_method('textDocument/completion') then
+                    vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy', 'popup' }
+                    vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+                end
+            end,
+        })
 
-        cmp.setup({
-            sources = {
-                { name = 'nvim_lsp' },
+        vim.diagnostic.config({
+            virtual_lines = {
+                -- Only show virtual line diagnostics for the current cursor line
+                current_line = true,
             },
-            snippet = {
-                expand = function(args)
-                    -- You need Neovim v0.10 to use vim.snippet
-                    vim.snippet.expand(args.body)
-                end,
-            },
-            mapping = cmp.mapping.preset.insert({}),
         })
     end
 }
