@@ -3,7 +3,6 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
         local fzf = require('fzf-lua')
-        fzf.setup()
         vim.keymap.set('n', '<C-p>', fzf.git_files, {})
         vim.keymap.set('n', '<leader>po', fzf.files, { desc = "Open file in directory" })
         vim.keymap.set('n', '<leader>r', fzf.registers, { desc = "View registers" })
