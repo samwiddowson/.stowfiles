@@ -44,3 +44,4 @@ vim.api.nvim_create_autocmd({ "FocusLost" }, {
 
 vim.opt.foldmethod = "marker"
 vim.opt.foldmarker = "#region,#endregion"
+vim.opt.foldlevelstart = 99
