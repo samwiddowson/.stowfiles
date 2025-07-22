@@ -163,11 +163,48 @@ _awsume() {
 complete -F _awsume awsume
 
 function letsgo(){
-    branch=$1
+    export TICKET_NUMBER=$1
+    # If no argument given, use current branch
+    if [[ -z "$TICKET_NUMBER" ]]; then
+
+        # Check if we're in a Git repo
+        if ! git rev-parse --is-inside-work-tree &>/dev/null; then
+            echo "Error: Not inside a Git repository." >&2
+            return 1
+        fi
+
+        branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+        if [[ -z "$branch" ]]; then
+            echo "Error: Could not determine current branch." >&2
+            return 1
+        fi
+
+        # Match and extract number from branch name (e.g., abcd-6346)
+        if [[ "$branch" =~ ^[^/]+/[^-]+-([0-9]+) ]]; then
+            export TICKET_NUMBER="${BASH_REMATCH[1]}"
+            echo "Ticket number: $TICKET_NUMBER"
+        else
+            echo "Error: Branch name '$branch' does not match expected pattern." >&2
+            return 1
+        fi
+    fi
+
     aws-sso-util login
     awsume NHS-Digital-DDC-Exeter-Texas-NonProd-K8s.dspt-rw-user
     loadsecrets
-    export Subs__DB_NAME=cca-$branch
+
+    export Subs__DB_NAME=cca-$TICKET_NUMBER
+    export SystemSettings__CAF__DynamoDbItemsTable=dspt-nonprod-dev-caf-$TICKET_NUMBER
+    export SystemSettings__CAF__DynamoDbResponsesTable=dspt-nonprod-dev-caf-responses-$TICKET_NUMBER
+    export SystemSettings__CAF__DynamoDbPublicationsTable=dspt-nonprod-dev-caf-publications-$TICKET_NUMBER
+    export SystemSettings__CAF__DynamoDbAuditsTable=dspt-nonprod-dev-caf-audits-$TICKET_NUMBER
+
+    echo Loaded additional environment variables:
+    echo $Subs__DB_NAME=cca-$TICKET_NUMBER
+    echo $SystemSettings__CAF__DynamoDbItemsTable=dspt-nonprod-dev-caf-$TICKET_NUMBER
+    echo $SystemSettings__CAF__DynamoDbResponsesTable=dspt-nonprod-dev-caf-responses-$TICKET_NUMBER
+    echo $SystemSettings__CAF__DynamoDbPublicationsTable=dspt-nonprod-dev-caf-publications-$TICKET_NUMBER
+    echo $SystemSettings__CAF__DynamoDbAuditsTable=dspt-nonprod-dev-caf-audits-$TICKET_NUMBER
 }
 
 fastfetch
