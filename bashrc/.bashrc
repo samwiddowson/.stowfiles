@@ -82,12 +82,14 @@ fi
 
 # git credential store to expire after 9h (i.e. last for one day)
 export GCM_CREDENTIAL_CACHE_OPTIONS="--timeout 32400"
+source /usr/share/git/completion/git-completion.bash
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
+[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
 
 export DOTNET_ROOT=/usr/share/dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
