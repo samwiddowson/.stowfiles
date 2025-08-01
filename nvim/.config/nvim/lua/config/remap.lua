@@ -50,3 +50,12 @@ end, { desc = "Replace selection in file" })
 map("n", "<leader>nn", function() --toggle relative vs absolute line numbers
     vim.wo.relativenumber = not vim.wo.relativenumber
 end, { desc = "toggle relative line numbers" })
+
+map("n", "<leader>zm", function()
+    vim.opt.foldmethod = "marker"
+    vim.opt.foldmarker = "#region,#endregion"
+end, { desc = "Set foldmethod to 'marker'" })
+
+map("n", "<leader>zi", function()
+    vim.opt.foldmethod = "indent"
+end, { desc = "Set foldmethod to 'indent'" })
