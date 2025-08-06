@@ -1,6 +1,6 @@
 return {
     'tpope/vim-fugitive',
     config = function()
-        vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Open Git Fugitive" })
+        vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Open Vim Fugitive" })
     end
 }
