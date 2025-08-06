@@ -4,42 +4,28 @@ local map = vim.keymap.set
 
 map("n", "<leader>pv", vim.cmd.NvimTreeOpen, { desc = "Open NvimTree" })
 
-map("v", "J", ":m '>+1<CR>gv=gv")
-map("v", "K", ":m '<-2<CR>gv=gv")
+map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
+map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
 
-map("n", "J", "mzJ`z")
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
+map("n", "J", "mzJ`z", { desc = "Join line below and retain cursor position" })
+map("n", "<C-d>", "<C-d>zz", { desc = "Half page down and recentre" })
+map("n", "<C-u>", "<C-u>zz", { desc = "Half page up and recentre" })
+map("n", "n", "nzzzv", { desc = "" })
+map("n", "N", "Nzzzv", { desc = "" })
 
 map("x", "<leader>p", "\"_dP", { desc = "Put (keep register)" })
 
 map("n", "<leader>y", "\"+y", { desc = "yank to clipboard" })
 map("v", "<leader>y", "\"+y", { desc = "yank to clipboard" })
-map("n", "<leader>Y", "\"+Y")
+map("n", "<leader>Y", "\"+Y", { desc = "yank to end of line to clipboard" })
 
 map("n", "<leader><leader>pp", "\"+p", { desc = "Put from clipboard" })
 
-map("v", "<C-c>", "\"+yi")
-map("v", "<C-x>", "\"+c")
--- map("v", "<C-v>", "c<Esc>\"+p")
-map("i", "<C-v>", "<Esc>\"+pa")
+map("i", "<C-n>", "<C-x><C-o>", { desc = "Activate autocomplete" })
 
 map("n", "Q", "<nop>")
-map("n", "q:", "<nop>")
-
--- map("n", "<leader>f", function()
---     vim.lsp.buf.format()
--- end)
-
--- map("n", "<C-k>", "<cmd>cnext<CR>zz")
--- map("n", "<C-j>", "<cmd>cprev<CR>zz")
--- map("n", "<leader>k", "<cmd>lnext<CR>zz")
--- map("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word in file" })
--- map("v", "<leader>s", "\"+y:%s/<C-V>/<C-V>/gI<Left><Left><Left>")
 map("v", "<leader>s", function()
     vim.cmd('normal! "+y')
     local selected = vim.fn.getreg("+")
