@@ -60,9 +60,9 @@ function letsgo(){
     export SystemSettings__CAF__DynamoDbAuditsTable=dspt-nonprod-dev-caf-audits-$TICKET_NUMBER
 
     echo Loaded additional environment variables:
-    echo $Subs__DB_NAME=cca-$TICKET_NUMBER
-    echo $SystemSettings__CAF__DynamoDbItemsTable=dspt-nonprod-dev-caf-$TICKET_NUMBER
-    echo $SystemSettings__CAF__DynamoDbResponsesTable=dspt-nonprod-dev-caf-responses-$TICKET_NUMBER
-    echo $SystemSettings__CAF__DynamoDbPublicationsTable=dspt-nonprod-dev-caf-publications-$TICKET_NUMBER
-    echo $SystemSettings__CAF__DynamoDbAuditsTable=dspt-nonprod-dev-caf-audits-$TICKET_NUMBER
+    echo Subs__DB_NAME = cca-$TICKET_NUMBER
+    echo SystemSettings__CAF__DynamoDbItemsTable = dspt-nonprod-dev-caf-$TICKET_NUMBER
+    echo SystemSettings__CAF__DynamoDbResponsesTable = dspt-nonprod-dev-caf-responses-$TICKET_NUMBER
+    echo SystemSettings__CAF__DynamoDbPublicationsTable = dspt-nonprod-dev-caf-publications-$TICKET_NUMBER
+    echo SystemSettings__CAF__DynamoDbAuditsTable = dspt-nonprod-dev-caf-audits-$TICKET_NUMBER
 }
