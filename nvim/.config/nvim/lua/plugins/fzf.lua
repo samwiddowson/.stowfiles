@@ -10,5 +10,7 @@ return {
         vim.keymap.set('n', '<leader>b', fzf.buffers, { desc = "View open files" })
         vim.keymap.set('n', '<leader>i', fzf.live_grep, { desc = "Live grep" })
         vim.keymap.set('n', '<leader>k', fzf.keymaps, { desc = "View keymaps" })
+        vim.keymap.set('n', '<leader>gc', fzf.git_commits, { desc = "View commit history" })
+        vim.keymap.set('n', '<leader>gb', fzf.git_bcommits, { desc = "View file commit history" })
     end
 }
