@@ -9,6 +9,9 @@ vim.lsp.enable('tailwindcss')
 vim.lsp.enable('markdown_oxide')
 vim.lsp.enable('zls')
 
+vim.lsp.enable('yaml-language-server')
+vim.lsp.enable('kube-linter')
+
 local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
 local event = "BufWritePre" -- or "BufWritePost"
 local async = event == "BufWritePost"
