@@ -24,6 +24,7 @@ map("n", "<leader><leader>pp", "\"+p", { desc = "Put from clipboard" })
 map("i", "<C-n>", "<C-x><C-o>", { desc = "Activate autocomplete" })
 
 map("n", "Q", "<nop>")
+map("n", "q:", "<nop>")
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word in file" })
 map("v", "<leader>s", function()
