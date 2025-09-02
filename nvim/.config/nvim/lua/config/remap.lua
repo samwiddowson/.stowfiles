@@ -34,9 +34,17 @@ map("v", "<leader>s", function()
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(cmd, true, false, true), 'n', false)
 end, { desc = "Replace selection in file" })
 
-map("n", "<leader>nn", function() --toggle relative vs absolute line numbers
+map("n", "<leader>nn", function()
     vim.wo.relativenumber = not vim.wo.relativenumber
 end, { desc = "toggle relative line numbers" })
+
+map("n", "<leader>hs", function()
+    vim.opt.hlsearch = true
+end, { desc = "search hilighting on" })
+
+map("n", "<leader>hx", function()
+    vim.opt.hlsearch = false
+end, { desc = "search highlighting off" })
 
 map("n", "<leader>zm", function()
     vim.opt.foldmethod = "marker"
