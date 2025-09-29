@@ -8,6 +8,8 @@ vim.lsp.enable('html')
 vim.lsp.enable('tailwindcss')
 vim.lsp.enable('markdown_oxide')
 vim.lsp.enable('zls')
+vim.lsp.enable('basedpyright')
+vim.lsp.enable('rust-analyzer')
 
 local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
 

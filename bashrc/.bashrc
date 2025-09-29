@@ -32,4 +32,7 @@ eval "$(fzf --bash)"
 eval "$(oh-my-posh init bash --config '~/.config/oh-my-posh/lambdageneration-green.omp.json')"
 eval "$(zoxide init bash)"
 
+# Rust
+. "$HOME/.cargo/env"
+
 fastfetch
