@@ -4,6 +4,7 @@ return {
         'nvim-tree/nvim-web-devicons', -- optional
     },
     config = function()
+        vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeOpen, { desc = "Open NvimTree" })
         require("nvim-tree").setup({
             sort = {
                 sorter = "case_sensitive",
