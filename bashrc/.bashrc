@@ -27,6 +27,8 @@ fi
 
 source /usr/share/git/completion/git-completion.bash
 
+PATH=$PATH:/home/sam/bin
+
 source ~/.bash_aliases
 source ~/.bash_functions
 source ~/.bash_variables
