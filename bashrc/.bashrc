@@ -33,6 +33,6 @@ eval "$(oh-my-posh init bash --config '~/.config/oh-my-posh/lambdageneration-gre
 eval "$(zoxide init bash)"
 
 # Rust
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 fastfetch
