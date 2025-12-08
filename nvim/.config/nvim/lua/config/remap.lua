@@ -42,6 +42,11 @@ map({ "n", "x" }, "<leader>l", ":norm ", { desc = ":norm shortcut" })
 
 map("n", "J", "mzJ`z", { desc = "Join line below and retain cursor position" })
 
+map("n", "<leader>;", function()
+    vim.wo.wrap = not vim.wo.wrap
+    vim.wo.linebreak = true
+end, { desc = "Toggle word wrapping" })
+
 -- map("n", "n", "nzzzv", { desc = "" })
 -- map("n", "N", "Nzzzv", { desc = "" })
 
