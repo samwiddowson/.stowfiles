@@ -16,7 +16,9 @@ map("n", "q:", "<nop>")
 map("n", "<leader>\\", "<C-^>", { desc = "Switch to alternate file" })
 map("n", "<leader>S", "<Cmd>vs #<CR>", { desc = "Open alternate file as split window" })
 map({ "i", "n", "x" }, "<M-n>", "<Cmd>vertical resize -5<CR>", { desc = "Decrease window width" })
-map({ "i", "n", "x" }, "<M-m>", "<Cmd>vertical resize +5<CR>", { desc = "Decrease window width" })
+map({ "i", "n", "x" }, "<M-.>", "<Cmd>vertical resize +5<CR>", { desc = "Increase window width" })
+map({ "i", "n", "x" }, "<M-m>", "<Cmd>horizontal resize -2<CR>", { desc = "Decrease window height" })
+map({ "i", "n", "x" }, "<M-,>", "<Cmd>horizontal resize +2<CR>", { desc = "Increase window height" })
 
 -- file stuff
 map({ "n", "x" }, "<leader>o", ":update<CR> :source<CR>", { desc = "Write and source file" })
