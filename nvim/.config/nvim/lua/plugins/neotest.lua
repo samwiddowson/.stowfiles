@@ -5,13 +5,13 @@ return {
         "nvim-lua/plenary.nvim",
         "antoinemadec/FixCursorHold.nvim",
         "nvim-treesitter/nvim-treesitter",
-        "rouge8/neotest-rust",
+        "nvim-neotest/neotest-python",
     },
     config = function()
         local neotest = require("neotest")
         neotest.setup({
             adapters = {
-                require("neotest-rust")
+                require("neotest-python")
             }
         })
 
