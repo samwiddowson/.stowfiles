@@ -9,9 +9,15 @@ return {
     },
     config = function()
         local neotest = require("neotest")
+
         neotest.setup({
             adapters = {
-                require("neotest-python")
+                require("neotest-python")({
+                    require("neotest-python")({
+                        args = { "--log-level", "DEBUG" },
+                        runner = "pytest",
+                    })
+                })
             }
         })
 
