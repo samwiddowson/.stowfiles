@@ -13,6 +13,6 @@ eval "$(zoxide init zsh)"
 source ~/.ana_env.sh
 
 # Rust
-# . "$HOME/.cargo/env"
+source "$HOME/.cargo/env"
 
 fastfetch
