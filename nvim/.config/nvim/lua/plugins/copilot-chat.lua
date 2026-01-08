@@ -17,8 +17,10 @@ return {
         config = function()
             require("CopilotChat").setup()
 
-            vim.keymap.set("n", "<leader>cc", "<Cmd>CopilotChatToggle<CR>", { desc = "Toggle Copilot Chat window" })
-            vim.keymap.set("n", "<leader>cm", "<Cmd>CopilotChatModels<CR>", { desc = "Select Copilot Chat model" })
+            vim.keymap.set("n", "<leader>cc", "<Cmd>CopilotChatToggle<CR>", { desc = "CopilotChat: Toggle window" })
+            vim.keymap.set("n", "<leader>cm", "<Cmd>CopilotChatModels<CR>", { desc = "CopilotChat: Select model" })
+            vim.keymap.set("n", "<leader>cb", [[:lua require ("CopilotChat").ask("#buffer ")<Left><Left>]],
+                { desc = "CopilotChat: Ask a question about this buffer" })
         end,
     },
 }
