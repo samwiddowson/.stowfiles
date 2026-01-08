@@ -10,7 +10,7 @@ The benefit of using Stow is that it keeps your dotfiles organized in a single d
 
 ### Installing Stow
 ```shell
-brew install stow
+sudo pacman -Syu stow
 ```
 
 ### Using Stow
@@ -43,8 +43,12 @@ From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvi
 
 ## tmux
 
-Remember: in tmux, before sourcing the new file, it will be Ctrl-B, r to source the new file
+The tmux configuration included here is fairly specialised to my workflow and keybind preferences, but feel free to adapt it to your needs.
 
-After that the tmux leader is Ctrl+Space.
+The tmux plugins require tpm (tmux plugin manager) to be installed (see above).
 
-Use `Ctrl+Space, I` (capital I) to install tmux plugins
+Before sourcing the included configuration, it will be necessary to press the following keybinds to source the new file: `Ctrl-B, r`
+
+After that the tmux leader will be `Ctrl+Space`.
+
+Use `Ctrl+Space, I` (capital I) to install tmux plugins. This will improve the status bar with git information and other useful features.
