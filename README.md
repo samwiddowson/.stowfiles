@@ -1,28 +1,45 @@
 # Sam's dotfiles -- stowed
 
-## stow
+This repository contains dotfiles managed with GNU Stow.
 
-`pacman -S stow`
+## Stow
 
-usage: from within the .stowfiles directory, `stow nvim` will symlink `.stowfiles/nvim/.config/nvim` to `~/.config/nvim`
+Stow is a symlink farm manager that helps you manage your dotfiles by creating symbolic links from a central repository to their appropriate locations in your home directory.
 
-## General
+The benefit of using Stow is that it keeps your dotfiles organized in a single directory while allowing you to easily deploy them to your home directory.
 
+### Installing Stow
+```shell
+brew install stow
+```
+
+### Using Stow
+From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvim` to `~/.config/nvim`
+
+## General notes on the setup
 - install stow (see above)
-- install kitty (if straight linux)
 - install nvim
-- install nvm
-  - and node through this
-- install ripgrep
-- install prettierd: `npm i -g @fsouza/prettierd`
-- install eslint: `npm i -g eslint`
-- install oh-my-posh
-- install tmux
-  - also install [tpm (tmux plugin manager)](https://github.com/tmux-plugins/tpm)
-- install [ stow ](https://www.gnu.org/software/stow) from [ source ](https://ftp.gnu.org/gnu/stow)
-- install yazi
-- install eza
-- install zoxide
+    - install ripgrep (required for nvim plugins)
+- A nicer terminal application
+    - install kitty
+        - Install 0xProto nerd font
+- For Node development:
+    - install nvm
+    - and node through this
+    - install prettierd: `npm i -g @fsouza/prettierd`
+    - install eslint: `npm i -g eslint`
+- Prettier CLI:
+    - install oh-my-posh 
+        - Install 0xProto nerd font (if not already done for kitty)
+- Terminal multiplexer:
+    - install tmux
+      - also install [tpm (tmux plugin manager)](https://github.com/tmux-plugins/tpm)
+- Recommended additional tools:
+    - fzf
+    - fd
+    - yazi
+    - eza
+    - zoxide
 
 ## tmux
 
