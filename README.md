@@ -40,6 +40,7 @@ From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvi
     - yazi
     - eza
     - zoxide
+    - imagemagick
 
 ## tmux
 
