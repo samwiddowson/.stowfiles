@@ -5,6 +5,7 @@ return {
     },
     config = function()
         vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeOpen, { desc = "Open NvimTree" })
+        vim.keymap.set("n", "<leader>pp", vim.cmd.NvimTreeFindFile, { desc = "Open NvimTree at current file" })
         require("nvim-tree").setup({
             sort = {
                 sorter = "case_sensitive",
