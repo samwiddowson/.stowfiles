@@ -13,3 +13,8 @@ export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 export PATH=$PATH:~/.local/bin
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export GOPATH=$HOME/.go
+export PATH=$GOPATH/bin:$PATH
+
