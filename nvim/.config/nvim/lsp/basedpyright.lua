@@ -1,5 +1,5 @@
 return {
-    root_markers = { "pyrightconfig.json", ".git" },
+    root_markers = { "pyrightconfig.json", ".git", "pyproject.toml" },
     settings = {
         basedpyright = {
             config = {

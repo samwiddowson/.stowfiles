@@ -11,12 +11,30 @@ return {
         local neotest = require("neotest")
 
         neotest.setup({
+            discovery = {
+                filter_dir = function(name, rel_path, root)
+                    -- Ignore these directories
+                    local ignore = {
+                        "node_modules",
+                        ".venv",
+                        "venv",
+                        ".git",
+                        "__pycache__",
+                        "dist",
+                        "build",
+                    }
+                    for _, dir in ipairs(ignore) do
+                        if name == dir then
+                            return false
+                        end
+                    end
+                    return true
+                end,
+            },
             adapters = {
                 require("neotest-python")({
-                    require("neotest-python")({
-                        args = { "--log-level", "DEBUG" },
-                        runner = "pytest",
-                    })
+                    args = { "--log-level", "DEBUG" },
+                    runner = "pytest",
                 })
             }
         })
