@@ -40,10 +40,15 @@ From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvi
     - yazi
     - eza
     - zoxide
+- Install Yabai and skhd for tiling window management on macOS
+    - brew install asmvik/formulae/yabai
+    - brew install koekeishiya/formulae/skhd
+    - create a sudoers entry for yabai as per the instructions after installation
+        - at time of writing: `echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai`
 
 ## tmux
 
-The tmux configuration included here is fairly specialised to my workflow and keybind preferences, but feel free to adapt it to your needs.
+The tmux configuration included here is fairly specialised to my workflow and keybind preferences.
 
 The tmux plugins require tpm (tmux plugin manager) to be installed (see above).
 
@@ -52,3 +57,15 @@ Before sourcing the included configuration, it will be necessary to press the fo
 After that the tmux leader will be `Ctrl+Space`.
 
 Use `Ctrl+Space, I` (capital I) to install tmux plugins. This will improve the status bar with git information and other useful features.
+
+## Yabai
+Yabai is a tiling window manager for macOS. The configuration included here is tailored to my preferences.
+
+Yabai and skhd (simple hotkey daemon) need to be installed separately (see above instructions).
+
+To start, stop or restart yabai, use the following commands:
+```shell
+yabai --start-service
+yabai --stop-service
+yabai --restart-service
+```

@@ -1,0 +1,57 @@
+# required actions:
+# window focus: cmd - {h,j,k,l}
+# window swap: ctrl + shift - {h,l}
+# window move and split: cmd + ctrl + shift - {h,l}
+# window move between displays: cmd + alt - {h,j,k,l}
+# window fullscreen toggle: ctrl + shift - k
+# space balance: ctrl + shift - a
+# space mirror: ctrl + shift - x
+# window move between spaces: hyper - {h,j,k,l}
+# display focus: cmd + ctrl - {h,j,k,l}
+#
+# Changing Window Focus
+
+## Change window focus within space
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+cmd - h : yabai -m window --focus west
+cmd - l : yabai -m window --focus east
+
+## Change display focus
+cmd + ctrl - j : yabai -m display --focus south
+cmd + ctrl - k : yabai -m display --focus north
+# cmd + alt - h : yabai -m display --focus west
+# cmd + alt - l : yabai -m display --focus east
+
+# Modifying the layout
+# ctrl + shift - r : yabai -m space --rotate 90
+ctrl + shift - x : yabai -m space --mirror y-axis
+
+# Modifying window size
+ctrl + shift - k : yabai -m window --toggle zoom-fullscreen
+
+ctrl + shift - a : yabai -m space --balance
+ctrl + shift - x : yabai -m space --mirror y-axis
+
+# Moving windows between displays
+cmd + alt - k : yabai -m window --display north; yabai -m display --focus north
+cmd + alt - j : yabai -m window --display south; yabai -m display --focus south
+
+# Moving windows within space
+ctrl + shift - h : yabai -m window --swap west
+ctrl + shift - l : yabai -m window --swap east
+
+# Window move and split
+cmd + ctrl + shift - h : yabai -m window --warp west
+cmd + ctrl + shift - l : yabai -m window --warp east
+
+# Moving windows between spaces
+# requires SIP to be (partially) disabled. See yabai documentation for more info.
+# Have commented this out as I don't want to disable SIP on this machine.
+# hyper - h : yabai -m window --space prev
+# hyper - l : yabai -m window --space next
+# hyper - y : yabai -m window --space 2
+# hyper - u : yabai -m window --space 3
+# hyper - i : yabai -m window --space 4
+# hyper - o : yabai -m window --space 5
+# hyper - p : yabai -m window --space 6
