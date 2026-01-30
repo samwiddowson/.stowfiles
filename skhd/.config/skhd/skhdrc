@@ -17,13 +17,13 @@ cmd - k : yabai -m window --focus north
 cmd - h : yabai -m window --focus west
 cmd - l : yabai -m window --focus east
 
-## Change display focus
-cmd + ctrl - j : yabai -m display --focus south
-cmd + ctrl - k : yabai -m display --focus north
-# cmd + alt - h : yabai -m display --focus west
-# cmd + alt - l : yabai -m display --focus east
-
-# Modifying the layout
+# ## Change display focus
+ctrl + alt + shift - j : yabai -m display --focus south
+ctrl + alt + shift - k : yabai -m display --focus north
+# # cmd + alt - h : yabai -m display --focus west
+# # cmd + alt - l : yabai -m display --focus east
+#
+# # Modifying the layout
 # ctrl + shift - r : yabai -m space --rotate 90
 ctrl + shift - x : yabai -m space --mirror y-axis
 
@@ -47,7 +47,6 @@ cmd + ctrl + shift - l : yabai -m window --warp east
 
 # Moving windows between spaces
 # requires SIP to be (partially) disabled. See yabai documentation for more info.
-# Have commented this out as I don't want to disable SIP on this machine.
 # hyper - h : yabai -m window --space prev
 # hyper - l : yabai -m window --space next
 # hyper - y : yabai -m window --space 2
