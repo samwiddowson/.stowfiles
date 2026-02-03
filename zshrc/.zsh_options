@@ -1,0 +1,6 @@
+setopt autocd extendedglob notify
+unsetopt beep
+bindkey -v
+
+zstyle :compinstall filename '/home/sam/.zshrc'
+autoload -Uz compinit && compinit

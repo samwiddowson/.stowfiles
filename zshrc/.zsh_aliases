@@ -1,0 +1,9 @@
+alias vim="nvim"
+alias vi="nvim"
+alias ls="eza"
+alias ll="eza -l --header --icons --git"
+alias lt="eza -lT --header --icons --git"
+alias history="history 1"
+alias zz='z -'
+alias cd='z'
+alias sudo='sudo '

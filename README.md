@@ -20,6 +20,8 @@ From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvi
 
 ## General notes on the setup
 
+- better shell
+    - install zsh and zsh-completions
 - install stow (see above)
 - install nvim
   - install ripgrep (required for nvim plugins)
@@ -45,6 +47,14 @@ From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvi
   - zoxide
   - imagemagick
 
+## zsh
+
+To change to `zsh` shell:
+- `chsh -l` to list available shells
+- `chsh /full/paty/to/shell`
+- `homectl update --shell=/full/path/to/shell/ user`
+
+
 ## tmux
 
 The tmux configuration included here is fairly specialised to my workflow and keybind preferences, but feel free to adapt it to your needs.
@@ -56,3 +66,4 @@ Before sourcing the included configuration, it will be necessary to press the fo
 After that the tmux leader will be `Ctrl+Space`.
 
 Use `Ctrl+Space, I` (capital I) to install tmux plugins. This will improve the status bar with git information and other useful features.
+
