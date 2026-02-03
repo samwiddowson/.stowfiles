@@ -67,3 +67,6 @@ After that the tmux leader will be `Ctrl+Space`.
 
 Use `Ctrl+Space, I` (capital I) to install tmux plugins. This will improve the status bar with git information and other useful features.
 
+## to look into
+
+[Chezmoi](https://www.chezmoi.io/) might be a better alternative to managing dotfiles across environments (i.e. Linux an MacOS) than my current method of branching:
