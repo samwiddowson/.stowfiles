@@ -9,38 +9,41 @@ Stow is a symlink farm manager that helps you manage your dotfiles by creating s
 The benefit of using Stow is that it keeps your dotfiles organized in a single directory while allowing you to easily deploy them to your home directory.
 
 ### Installing Stow
+
 ```shell
 sudo pacman -Syu stow
 ```
 
 ### Using Stow
+
 From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvim` to `~/.config/nvim`
 
 ## General notes on the setup
+
 - install stow (see above)
 - install nvim
-    - install ripgrep (required for nvim plugins)
+  - install ripgrep (required for nvim plugins)
 - A nicer terminal application
-    - install kitty
-        - Install 0xProto nerd font
+  - install kitty
+    - Install 0xProto nerd font
 - For Node development:
-    - install nvm
-    - and node through this
-    - install prettierd: `npm i -g @fsouza/prettierd`
-    - install eslint: `npm i -g eslint`
+  - install nvm
+  - and node through this
+  - install prettierd: `npm i -g @fsouza/prettierd`
+  - install eslint: `npm i -g eslint`
 - Prettier CLI:
-    - install oh-my-posh 
-        - Install 0xProto nerd font (if not already done for kitty)
+  - install oh-my-posh
+    - Install 0xProto nerd font (if not already done for kitty)
 - Terminal multiplexer:
-    - install tmux
-      - also install [tpm (tmux plugin manager)](https://github.com/tmux-plugins/tpm)
+  - install tmux
+    - also install [tpm (tmux plugin manager)](https://github.com/tmux-plugins/tpm)
 - Recommended additional tools:
-    - fzf
-    - fd
-    - yazi
-    - eza
-    - zoxide
-    - imagemagick
+  - fzf
+  - fd
+  - yazi
+  - eza
+  - zoxide
+  - imagemagick
 
 ## tmux
 
