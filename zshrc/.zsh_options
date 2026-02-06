@@ -2,5 +2,14 @@ setopt autocd extendedglob notify
 unsetopt beep
 bindkey -v
 
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored _correct _approximate
+zstyle ':completion:*' max-errors 2 not-numeric
+zstyle ':completion:*' prompt '%e errors found in command...'
+zstyle ':completion:*' special-dirs true
+zstyle :compinstall filename '/home/sam/.zshrc'
+
+
 zstyle :compinstall filename '/home/sam/.zshrc'
 autoload -Uz compinit && compinit

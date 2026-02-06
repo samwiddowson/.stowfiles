@@ -21,7 +21,7 @@ From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvi
 ## General notes on the setup
 
 - better shell
-    - install zsh and zsh-completions
+  - install zsh and zsh-completions
 - install stow (see above)
 - install nvim
   - install ripgrep (required for nvim plugins)
@@ -50,10 +50,9 @@ From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvi
 ## zsh
 
 To change to `zsh` shell:
-- `chsh -l` to list available shells
-- `chsh /full/paty/to/shell`
-- `homectl update --shell=/full/path/to/shell/ user`
 
+- `chsh -l` to list available shells
+- `chsh -s /full/path/to/shell`
 
 ## tmux
 
