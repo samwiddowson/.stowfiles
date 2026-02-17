@@ -36,3 +36,11 @@ vim.opt.clipboard = ""
 
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevelstart = 99
+
+-- helm filetype
+vim.filetype.add({
+    pattern = {
+        ['.*/templates/.*%.yaml'] = 'helm',
+        ['.*/templates/.*%.tpl'] = 'helm',
+    },
+})
