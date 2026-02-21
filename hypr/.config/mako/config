@@ -1,0 +1,35 @@
+# Position
+anchor=top-center
+margin=30,0,0,0
+
+# Sizing
+width=350
+height=150
+padding=15
+border-size=2
+border-radius=15
+
+# Everforest Dark colors
+background-color=#2d353b
+text-color=#d3c6aa
+border-color=#a7c080
+
+# Behaviour
+default-timeout=5000
+ignore-timeout=0
+sort=-time
+layer=overlay
+max-visible=5
+max-icon-size=48
+
+# Urgency styling
+[urgency=low]
+border-color=#86c092
+
+[urgency=normal]
+border-color=#a7c080
+
+[urgency=critical]
+border-color=#e67e80
+background-color=#4d353b
+default-timeout=0

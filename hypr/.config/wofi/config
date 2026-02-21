@@ -1,0 +1,16 @@
+# Sizing
+width=550
+height=500
+dynamic_lines=true
+
+# Positioning
+location=2
+# xoffset=0
+yoffset=200
+
+# Behavior
+allow_markup=true
+insensitive=true
+no_actions=true
+prompt=Output
+columns=1

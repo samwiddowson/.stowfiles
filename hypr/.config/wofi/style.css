@@ -1,0 +1,54 @@
+* Everforest Dark theme */
+* {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+window {
+    background-color: #2d353b;
+    border-radius: 12px;
+    border: 2px solid #a7c080;
+    font-size: 20px;
+}
+
+#input {
+    margin: 8px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #343f44;
+    color: #d3c6aa;
+}
+
+#input:focus {
+    border: none;
+    box-shadow: none;
+}
+
+#inner-box {
+    margin: 4px 8px 8px 8px;
+}
+
+#outer-box {
+    margin: 0;
+    padding: 0;
+}
+
+#text {
+    color: #d3c6aa;
+}
+
+#entry {
+    padding: 8px;
+    border-radius: 6px;
+    margin: 2px 0;
+}
+
+#entry:selected {
+    background-color: #a7c080;
+    color: #2d353b;
+}
+
+#entry:selected #text {
+    color: #2d353b;
+    font-weight: bold;
+}
