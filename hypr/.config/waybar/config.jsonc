@@ -2,9 +2,9 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    // "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    // "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
@@ -35,7 +35,7 @@
     // Modules configuration
     "hyprland/workspaces": {
         "persistent-workspaces": {
-             "*": 5, // 5 workspaces by default on every monitor
+             "*": 5
         },
         "disable-scroll": true,
         "all-outputs": true,
@@ -67,7 +67,7 @@
     },
     "clock": {
         "tooltip": true,
-        "tooltip-format": "{: %a, %D/%M/%Y}",
+        "tooltip-format": "{:%A, %d %B %Y}",
         "interval": 60,
         "format": "{:%H:%M | %a %d/%m/%Y}",
         "max-length": 25
@@ -178,14 +178,13 @@
         "format": "{format_source}",
         "format-source": "",
         "format-source-muted": "",
-        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
     },
     "custom/media": {
-        "format": "{icon} {text}",
+        "format": "🎜  {text}",
         "return-type": "json",
         "max-length": 40,
         "format-icons": {
-            "spotify": "",
             "default": "🎜"
         },
         "escape": true,
