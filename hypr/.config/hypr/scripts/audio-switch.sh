@@ -29,8 +29,7 @@ fi
 # Show picker with custom config
 choice=$(print -P "$all_sinks" | wofi --dmenu \
     --prompt "Output" \
-    -c "$HOME/.config/wofi/audio-switch.conf" \
-    -s "$HOME/.config/wofi/audio-switch.css")
+    -c "$HOME/.config/wofi/audio-switch.conf")
 
 # Exit if cancelled
 [[ -z "$choice" ]] && exit 0

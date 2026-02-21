@@ -46,6 +46,9 @@ From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvi
   - eza
   - zoxide
   - imagemagick
+- hyprland
+  - `sudo pacman -S hyprland hyprpolkitagent hyprpaper hyprlock hypridle hyprshutdown hyprsysteminfo waybar wofi`
+  - `yay -S hyprshutdown hyprworm`
 
 ## zsh
 
