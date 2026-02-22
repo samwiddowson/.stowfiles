@@ -18,15 +18,15 @@ choice=$(echo -e "$menu_items" | wofi --dmenu \
 
 case "$choice" in
     *"Shut Down"*)
-        confirm "shut down" && systemctl poweroff
+        confirm "shut down" && hyprshutdown -p "systemctl poweroff"
         ;;
     *"Reboot"*)
-        confirm "reboot" && systemctl reboot
+        confirm "reboot" && hyprshutdown -p "systemctl reboot"
         ;;
     *"Lock"*)
         hyprlock
         ;;
     *"Log Out"*)
-        confirm "log out" && hyprshutdown
+        confirm "log out" && ~/.config/hypr/scripts/logout.sh
         ;;
 esac
