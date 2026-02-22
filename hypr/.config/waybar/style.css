@@ -15,14 +15,14 @@
 }
 
 .modules-center {
-  background-color: rgba(65, 75, 80, 0.7);
+  background-color: #1E2326;
   padding: 0px 10px;
   border-radius: 0 0 20px 20px;
 }
 
 .modules-right {
   font-size: 10px;
-  background-color: #2d353b;
+  background-color: #1E2326;
   border-radius: 0 0 0 20px;
   padding: 0;
   margin: 0;
@@ -32,7 +32,12 @@
   padding: 0 1em;
   text-shadow: 0 0 5px rgb(0, 0, 0);
   color: #dbbc7f;
-  border-radius: 20px;
+  background-color: #272E33;
+  border-radius: 0 0 0 20px;
+}
+
+#clock:hover {
+    color: #D3C6AA;
 }
 
 window#waybar {
@@ -77,8 +82,9 @@ button:hover {
 }
 
 #pulseaudio {
-  margin: 0;
-  padding: 0 0.5em 0 0.4em;
+  padding: 0 0.5em 0 32px;
+  border-radius: 0 0 0 20px;
+  background-color: #1E2326;
   color: #a7c080;
 }
 
@@ -226,9 +232,15 @@ label:focus {
 }
 
 #custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
+    padding: 0 1em;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+    color: #A7C080;
+    border-radius: 20px;
     min-width: 100px;
+}
+
+#custom-media:hover {
+    color: #dbbc7f;
 }
 
 #custom-media.custom-spotify {

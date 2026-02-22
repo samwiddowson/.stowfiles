@@ -8,12 +8,11 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/submap",
+        "hyprland/submap"
         // "sway/scratchpad",
-        "custom/media"
     ],
     "modules-center": [
-        "clock"
+        "custom/media"
     ],
     "modules-right": [
         "mpd",
@@ -25,6 +24,7 @@
         // "cpu",
         // "memory",
         // "temperature",
+        "clock",
         "keyboard-state",
         "tray",
         // "hyprland/language",
@@ -70,7 +70,8 @@
         "tooltip-format": "{:%A, %d %B %Y}",
         "interval": 60,
         "format": "{:%H:%M | %a %d/%m/%Y}",
-        "max-length": 25
+        "max-length": 25,
+        "on-click": "gnome-calendar"
     },
 
     // "sway/scratchpad": {
@@ -188,7 +189,9 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
+        "on-click": "~/.config/hypr/scripts/focus-player.sh"
+
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {

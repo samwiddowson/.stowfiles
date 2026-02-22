@@ -158,7 +158,7 @@ def parse_arguments():
     # Increase verbosity with every occurrence of -v
     parser.add_argument("-v", "--verbose", action="count", default=0)
 
-    parser.add_argument("-x", "--exclude", "- Comma-separated list of excluded player")
+    parser.add_argument("-x", "--exclude", help="- Comma-separated list of excluded player")
 
     # Define for which player we"re listening
     parser.add_argument("--player")
@@ -179,4 +179,18 @@ def main():
                             format="%(asctime)s %(name)s %(levelname)s:%(lineno)d %(message)s")
 
     # Logging is set by default to WARN and higher.
-    # With every occurrence of -v it's 
+    # With every occurrence of -v it's lowered by one
+    logger.setLevel(max((3 - arguments.verbose) * 10, 0))
+
+    logger.info("Creating player manager")
+    if arguments.player:
+        logger.info(f"Filtering for player: {arguments.player}")
+    if arguments.exclude:
+        logger.info(f"Exclude player {arguments.exclude}")
+
+    player = PlayerManager(arguments.player, arguments.exclude)
+    player.run()
+
+
+if __name__ == "__main__":
+    main()
