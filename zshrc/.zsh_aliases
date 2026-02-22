@@ -7,3 +7,5 @@ alias history="history 1"
 alias zz='z -'
 alias cd='z'
 alias sudo='sudo '
+alias clip='xclip -selection c'
+alias getip="curl ifconfig.me | clip"

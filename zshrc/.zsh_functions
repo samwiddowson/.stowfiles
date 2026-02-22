@@ -9,7 +9,7 @@ function yy() {
     rm -f -- "$tmp"
 }
 
-function fuck() {
+function jfdi() {
   sudo $(fc -ln -1)
 }
 
