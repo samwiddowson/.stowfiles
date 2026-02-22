@@ -6,6 +6,7 @@
     // "width": 1280, // Waybar width
     // "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
+    "output": "DP-3",
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/submap"
@@ -35,32 +36,23 @@
     // Modules configuration
     "hyprland/workspaces": {
         "persistent-workspaces": {
-             "*": 5
+             "DP-3": [1, 2, 3, 4, 5],
+             "HDMI-A-3": [6, 7, 8, 9, 10] 
         },
+        "ignore-workspaces": ["6", "7", "8", "9", "10"],
         "disable-scroll": true,
-        "all-outputs": true,
+        "all-outputs": false,
         "warp-on-scroll": false,
-        "format": "{name}",
-        // "format": "{name}: {icon}",
-        // "format-icons": {
-        //     // "1": "",
-        //     // "2": "",
-        //     // "3": "",
-        //     // "4": "",
-        //     // "5": "",
-        //     // "urgent": "",
-        //     "focused": "",
-        //     "default": ""
-        // }
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
     },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
         "format": "{name}",
-        // "format-icons": {
-        //     "locked": "",
-        //     "unlocked": ""
-        // }
     },
     "hyprland/submap": {
         "format": "<span style=\"italic\">{}</span>"

@@ -49,6 +49,7 @@ From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvi
 - hyprland
   - `sudo pacman -S hyprland hyprpolkitagent hyprpaper hyprlock hypridle hyprshutdown hyprsysteminfo waybar wofi`
   - `yay -S hyprshutdown hyprworm`
+  - run `hyprctl monitors` to get monitor names and tweak `hypr/.config/hypr/land/monitors.conf`
 - keyd
   - for some changes that allow me to use macos muscle memory.
     - Note that this makes all SUPER+V and other similar keys remap as C-v etc

@@ -1,0 +1,22 @@
+// -*- mode: jsonc -*-
+{
+    "output": "HDMI-A-3",
+    "modules-left": [
+        "hyprland/workspaces",
+    ],
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+             "HDMI-A-3": [6, 7, 8, 9, 10] 
+        },
+        "ignore-workspaces": ["1", "2", "3", "4", "5"],
+        "disable-scroll": true,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
+    }
+}
+

@@ -8,9 +8,10 @@
 }
 
 .modules-left {
-  background-color: #2d353b;
+  background-color: #1E2326;
   border-radius: 0 0 20px 0;
   padding: 0;
+  padding-right: 96px;
   margin: 0;
 }
 
@@ -30,7 +31,6 @@
 
 #clock {
   padding: 0 1em;
-  text-shadow: 0 0 5px rgb(0, 0, 0);
   color: #dbbc7f;
   background-color: #272E33;
   border-radius: 0 0 0 20px;
@@ -99,6 +99,12 @@ button:hover {
  
 #pulseaudio.microphone label {
     min-width: 24px;
+}
+
+#workspaces {
+    padding-right: 10px;
+    background-color: #2d353b;
+    border-radius: 0 0 20px 0;
 }
 
 #workspaces button {
