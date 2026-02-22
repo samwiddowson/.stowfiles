@@ -4,47 +4,47 @@
     font-weight: bold;
     border-radius: 0px;
     margin: 0;
-
 }
 
 .modules-left {
-  background-color: #1E2326;
-  border-radius: 0 0 20px 0;
-  padding: 0;
-  padding-right: 96px;
-  margin: 0;
+    background-color: #1e2326;
+    border-radius: 0 0 20px 0;
+    padding: 0;
+    padding-right: 96px;
+    margin: 0;
 }
 
 .modules-center {
-  background-color: #1E2326;
-  padding: 0px 10px;
-  border-radius: 0 0 20px 20px;
+    background-color: #1e2326;
+    padding: 0px 10px;
+    border-radius: 0 0 20px 20px;
+    min-width: 200px;
 }
 
 .modules-right {
-  font-size: 10px;
-  background-color: #1E2326;
-  border-radius: 0 0 0 20px;
-  padding: 0;
-  margin: 0;
+    font-size: 10px;
+    background-color: #1e2326;
+    border-radius: 0 0 0 20px;
+    padding: 0;
+    margin: 0;
 }
 
 #clock {
-  padding: 0 1em;
-  color: #dbbc7f;
-  background-color: #272E33;
-  border-radius: 0 0 0 20px;
+    padding: 0 1em;
+    color: #dbbc7f;
+    background-color: #272e33;
+    border-radius: 0 0 0 20px;
 }
 
 #clock:hover {
-    color: #D3C6AA;
+    color: #d3c6aa;
 }
 
 window#waybar {
-    background-color: rgba(0,0,0,0);
-    color: #A7C080;
+    background-color: rgba(0, 0, 0, 0);
+    color: #a7c080;
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
@@ -55,11 +55,11 @@ window#waybar.empty {
     background-color: transparent;
 }
 window#waybar.solo {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 }
 
 window#waybar.termite {
-    background-color: #3F3F3F;
+    background-color: #3f3f3f;
 }
 
 window#waybar.chromium {
@@ -78,14 +78,14 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #D3C6AA;
+    box-shadow: inset 0 -3px #d3c6aa;
 }
 
 #pulseaudio {
-  padding: 0 0.5em 0 32px;
-  border-radius: 0 0 0 20px;
-  background-color: #1E2326;
-  color: #a7c080;
+    padding: 0 0.5em 0 32px;
+    border-radius: 0 0 0 20px;
+    background-color: #1e2326;
+    color: #a7c080;
 }
 
 #pulseaudio:hover {
@@ -96,7 +96,7 @@ button:hover {
     min-width: 24px;
     padding: 0 10px;
 }
- 
+
 #pulseaudio.microphone label {
     min-width: 24px;
 }
@@ -118,7 +118,8 @@ button:hover {
     color: #d3c6aa;
 }
 
-#workspaces button.focused, #workspaces button.active {
+#workspaces button.focused,
+#workspaces button.active {
     background-color: #425047;
     box-shadow: inset 0 -3px #a7c080;
 }
@@ -128,7 +129,7 @@ button:hover {
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: #64727d;
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -193,9 +194,7 @@ button:hover {
     background: #83c092;
     color: #232a2e;
     padding: 0 0px;
-    border-radius: 0 0 0 20px
-    /* margin: 0 5px; */
-    /* min-width: 16px; */
+    border-radius: 0 0 0 20px;
 }
 
 #keyboard-state > label {
@@ -219,7 +218,6 @@ button:hover {
     background-color: #d3c6aa;
 }
 
-
 label:focus {
     background-color: #000000;
 }
@@ -240,9 +238,8 @@ label:focus {
 #custom-media {
     padding: 0 1em;
     text-shadow: 0 0 5px rgb(0, 0, 0);
-    color: #A7C080;
+    color: #a7c080;
     border-radius: 20px;
-    min-width: 100px;
 }
 
 #custom-media:hover {
@@ -286,7 +283,6 @@ label:focus {
     background-color: #ecf0f1;
     color: #2d3436;
 }
-
 
 /*
 #scratchpad {
