@@ -164,7 +164,8 @@
             "default": ["", "", ""]
         },
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-double-click": "pavucontrol",
+        // "on-double-click": "pavucontrol",
+        "on-double-click": "kitty wiremix",
         "on-click-right": "~/.config/hypr/scripts/audio-switch.sh"
     },
    "pulseaudio#microphone": {
@@ -181,8 +182,9 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "pkill -f mediaplayer.py; $HOME/.config/waybar/mediaplayer.py 2> /dev/null",
-        "on-click": "~/.config/hypr/scripts/focus-player.sh"
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "~/.config/hypr/scripts/focus-player.sh"
     },
     "custom/power": {
         "format" : "⏻",
