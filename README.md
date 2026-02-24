@@ -21,41 +21,48 @@ From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvi
 ## General notes on the setup
 
 - better shell
-  - install zsh and zsh-completions
+    - install zsh and zsh-completions
 - install stow (see above)
 - install nvim
-  - install ripgrep (required for nvim plugins)
+    - install ripgrep (required for nvim plugins)
 - A nicer terminal application
-  - install kitty
-    - Install 0xProto nerd font
+    - install kitty
+        - Install 0xProto nerd font
 - For Node development:
-  - install nvm
-  - and node through this
-  - install prettierd: `npm i -g @fsouza/prettierd`
-  - install eslint: `npm i -g eslint`
+    - install nvm
+    - and node through this
+    - install prettierd: `npm i -g @fsouza/prettierd`
+    - install eslint: `npm i -g eslint`
 - Prettier CLI:
-  - install oh-my-posh
-    - Install 0xProto nerd font (if not already done for kitty)
+    - install oh-my-posh
+        - Install 0xProto nerd font (if not already done for kitty)
 - Terminal multiplexer:
-  - install tmux
-    - also install [tpm (tmux plugin manager)](https://github.com/tmux-plugins/tpm)
+    - install tmux
+        - also install [tpm (tmux plugin manager)](https://github.com/tmux-plugins/tpm)
 - Recommended additional tools:
-  - fzf
-  - fd
-  - yazi
-  - eza
-  - zoxide
-  - imagemagick
+    - terminal stuff:
+        - fzf
+        - ripgrep
+        - ffmpeg
+        - fd
+        - yazi
+        - eza
+        - zoxide
+        - imagemagick
+    - mpd
+    - wiremix (TUI audio device/volume manager)
+    - impala (TUI network connection manager)
 - hyprland
-  - `sudo pacman -S hyprland hyprpolkitagent hyprpaper hyprlock hypridle hyprshutdown hyprsysteminfo waybar wofi`
-  - `yay -S hyprshutdown hyprworm`
-  - run `hyprctl monitors` to get monitor names and tweak `hypr/.config/hypr/land/monitors.conf`
+    - `sudo pacman -S hyprland hyprpolkitagent hyprpaper hyprlock hypridle hyprshutdown hyprsysteminfo waybar wofi`
+    - `yay -S hyprshutdown hyprworm`
+    - run `hyprctl monitors` to get monitor names and tweak `hypr/.config/hypr/land/monitors.conf`
 - keyd
-  - for some changes that allow me to use macos muscle memory.
-    - Note that this makes all SUPER+V and other similar keys remap as C-v etc
-    - `sudo pacman -S keyd`
-    - `sudo vim /etc/keyd/default.conf`
-      - contents of the file:
+    - for some changes that allow me to use macos muscle memory.
+        - Note that this makes all SUPER+V and other similar keys remap as C-v etc
+        - `sudo pacman -S keyd`
+        - `sudo vim /etc/keyd/default.conf`
+            - contents of the file:
+
 ```toml
 [ids]
 *
@@ -73,6 +80,7 @@ w = C-w
 r = C-r
 t = C-t
 ```
+
 - `sudo systemctl enable --now keyd`
 
 ## zsh
