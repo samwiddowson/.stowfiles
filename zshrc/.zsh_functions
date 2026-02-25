@@ -9,6 +9,10 @@ function yy() {
     rm -f -- "$tmp"
 }
 
+function batman() {
+    man $1 | bat -l man -p
+}
+
 function jfdi() {
   sudo $(fc -ln -1)
 }

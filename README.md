@@ -59,6 +59,7 @@ From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvi
 - keyd
     - for some changes that allow me to use macos muscle memory.
         - Note that this makes all SUPER+V and other similar keys remap as C-v etc
+        - swaps two keys which for some reason are the other way aroiund in macos even when using "GBPC" keyboard layout
         - `sudo pacman -S keyd`
         - `sudo vim /etc/keyd/default.conf`
             - contents of the file:
@@ -69,6 +70,8 @@ From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvi
 
 [main]
 meta = layer(meta_as_ctrl)
+grave = 102nd
+102nd = grave
 
 [meta_as_ctrl:M]
 c = C-c
