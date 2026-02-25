@@ -1,2 +1,19 @@
 [opener]
-edit = [ {run = 'nvim "$@"', orphan = false, block = true}, ]
+edit = [{ run = 'nvim "$@"', orphan = false, block = true }]
+loupe = [{ run = 'loupe "$@"', orphan = true, block = false }]
+
+[open]
+prepend_rules = [
+    { url = "*.png", use = [
+        "loupe",
+    ] },
+    { url = "*.jpg", use = [
+        "loupe",
+    ] },
+    { url = "*.jpeg", use = [
+        "loupe",
+    ] },
+    { url = "*.gif", use = [
+        "loupe",
+    ] },
+]
