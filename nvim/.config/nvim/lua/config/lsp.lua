@@ -11,6 +11,7 @@ vim.lsp.enable('zls')
 vim.lsp.enable('basedpyright')
 vim.lsp.enable('rust-analyzer')
 vim.lsp.enable('css-lsp')
+vim.lsp.enable('hyprls')
 
 local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
 
