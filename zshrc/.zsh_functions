@@ -10,7 +10,7 @@ function yy() {
 }
 
 function batman() {
-    man $1 | bat -l man -p
+    man $* | bat -l man -p
 }
 
 function jfdi() {
