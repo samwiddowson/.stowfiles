@@ -10,6 +10,6 @@ if hyprctl clients -j | jq -e '.[] | select(.class == "'$app_name'")' > /dev/nul
     notify-send "Existing Terminal" "Switched to existing app $app_name on workspace $(hyprctl activeworkspace -j | jq -r '.id')."
 else
     # Launch new kitty with tmux
-    notify-send "DEBUG" "$launch_cmd"
+    # notify-send "DEBUG" "$launch_cmd"
     eval $launch_cmd
 fi
