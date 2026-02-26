@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-menu_items='󰌾  Lock\n󰐥  Shut Down\n󰗽  Log Out\n󰜉  Reboot'
+menu_items='󰌾  Lock\n󰗽  Log Out\n󰐥  Shut Down\n󰜉  Reboot'
 
 confirm() {
     local action="$1"
