@@ -24,7 +24,7 @@ return {
         vim.keymap.set('n', 'got', '<Cmd>Lspsaga goto_type_definition<CR>',
             { noremap = true, silent = true, desc = "Goto type definition" })
 
-        vim.keymap.set('n', '<C-o>', '<Cmd>Lspsaga outline<CR>',
+        vim.keymap.set('n', '<M-o>', '<Cmd>Lspsaga outline<CR>',
             { noremap = true, silent = true, desc = "Show outline" })
     end,
     dependencies = {
