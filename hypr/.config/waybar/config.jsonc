@@ -9,7 +9,7 @@
     "output": "Dell Inc. DELL U3425WE BNR93Z3",
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/submap"
+        // "hyprland/submap"
         // "sway/scratchpad",
     ],
     "modules-center": [
@@ -45,7 +45,7 @@
         "disable-scroll": true,
         "all-outputs": false,
         "warp-on-scroll": false,
-        "format": "{icon}{name}",
+        "format": "{icon}",
         "format-icons": {
             "active": "",
             "default": ""
@@ -56,9 +56,9 @@
         "capslock": true,
         "format": "{name}",
     },
-    "hyprland/submap": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
+    // "hyprland/submap": {
+    //     "format": "<span style=\"italic\">{}</span>"
+    // },
     "clock": {
         "tooltip": true,
         "tooltip-format": "{:%A, %d %B %Y}",
