@@ -8,7 +8,7 @@
     // Choose the order of the modules
     "output": "Dell Inc. DELL U3425WE BNR93Z3",
     "modules-left": [
-        "hyprland/workspaces",
+        "hyprland/workspaces"
         // "hyprland/submap"
         // "sway/scratchpad",
     ],
