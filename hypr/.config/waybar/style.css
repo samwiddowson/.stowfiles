@@ -16,18 +16,27 @@
 .modules-left {
     border-radius: 0 0 20px 0;
     padding-right: 64px;
+    border-style: solid;
+    border-color: #f5ecd9;
+    border-width: 0 2px 0 0;
 }
 
 .modules-center {
     padding: 0px 10px;
     border-radius: 0 0 20px 20px;
     min-width: 200px;
+    border-style: solid;
+    border-color: #f5ecd9;
+    border-width: 0 2px 0 2px;
 }
 
 .modules-right {
     font-size: 10px;
     border-radius: 0 0 0 20px;
     padding-left: 64px;
+    border-style: solid;
+    border-color: #f5ecd9;
+    border-width: 0 0 0 2px;
 }
 
 /* Base text */
@@ -74,6 +83,9 @@ button:hover {
     padding-right: 10px;
     background-color: #24283f;
     border-radius: 0 0 20px 0;
+    border-style: solid;
+    border-color: #f5ecd9;
+    border-width: 0 2px 0 0;
 }
 
 #workspaces button {
@@ -98,12 +110,19 @@ button:hover {
     color: #0d0e1f;
 }
 
+#custom-media:hover {
+    color: #f5ecd9;
+}
+
 /* Audio */
 #pulseaudio {
     padding: 0 0.5em 0 32px;
     border-radius: 0 0 0 20px;
     background-color: #151726;
     color: #f3bc70;
+    border-style: solid;
+    border-color: #f5ecd9;
+    border-width: 0 0 0 2px;
 }
 
 #pulseaudio:hover {
@@ -120,6 +139,9 @@ button:hover {
     color: #f3bc70;
     background-color: #24283f;
     border-radius: 0 0 0 20px;
+    border-style: solid;
+    border-color: #f5ecd9;
+    border-width: 0 0 0 2px;
 }
 
 #clock:hover {
@@ -132,22 +154,25 @@ button:hover {
     color: #f3bc70;
     border-radius: 0 0 0 20px;
     font-size: 8px;
+    border-style: solid;
+    border-color: #f5ecd9;
+    border-width: 0 0 0 2px;
 }
 
-#keyboard-state > label {
+#keyboard-state>label {
     padding: 0 4px;
 }
 
-#keyboard-state > label.numlock {
+#keyboard-state>label.numlock {
     padding-left: 4px;
     font-size: 12px;
 }
 
-#keyboard-state > label.capslock {
+#keyboard-state>label.capslock {
     font-size: 12px;
 }
 
-#keyboard-state > label.locked {
+#keyboard-state>label.locked {
     background: #2e344d;
     color: #f3bc70;
 }
@@ -158,6 +183,10 @@ button:hover {
     color: #0d0e1f;
     padding: 0 4px;
     font-size: 20px;
+    border-radius: 0 0 0 20px;
+    border-style: solid;
+    border-color: #f5ecd9;
+    border-width: 0 0 0 2px;
 }
 
 #custom-power:hover {
@@ -180,7 +209,7 @@ button:hover {
     background-color: #151726;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     background-color: #f3bc70;
 }
 
