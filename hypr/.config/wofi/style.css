@@ -1,27 +1,28 @@
-/* Everforest Dark theme */
 * {
     font-family: "0xProto", "Symbols Nerd Font", monospace;
 }
 
 window {
-    background-color: #2d353b;
+    background-color: rgba(13, 14, 31, 0.85);
     border-radius: 12px;
-    border: 2px solid #a7c080;
+    border: 2px solid #f3bc70;
+    box-shadow: 0px 0px 15px #f3bc70;
     font-size: 20px;
 }
 
 #input {
     margin: 8px;
     padding: 10px;
-    border: none;
+    border: 1px solid #f3bc70;
     border-radius: 8px;
-    background-color: #343f44;
-    color: #d3c6aa;
+    background-color: rgba(21, 23, 38, 0.75);
+    color: #f3bc70;
+    box-shadow: 0px 0px 10px #f3bc70;
 }
 
 #input:focus {
-    border: none;
-    box-shadow: none;
+    border: 1px solid #f3bc70;
+    box-shadow: 0px 0px 15px #f3bc70;
 }
 
 #inner-box {
@@ -35,21 +36,28 @@ window {
 
 #text {
     padding: 0px 4px;
-    color: #d3c6aa;
+    color: #f3bc70;
 }
 
 #entry {
     padding: 8px;
     border-radius: 6px;
     margin: 2px 0;
+    background-color: rgba(13, 14, 31, 0.65);
+    color: #f3bc70;
+}
+
+#entry:hover {
+    background-color: rgba(21, 23, 38, 0.75);
 }
 
 #entry:selected {
-    background-color: #a7c080;
-    color: #2d353b;
+    background-color: rgba(36, 40, 63, 0.85);
+    color: #f3bc70;
+    box-shadow: 0px 0px 15px #f3bc70;
 }
 
 #entry:selected #text {
-    color: #2d353b;
+    color: #f3bc70;
     font-weight: bold;
 }
