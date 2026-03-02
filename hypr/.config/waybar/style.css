@@ -116,10 +116,13 @@ button:hover {
 
 /* Audio */
 #pulseaudio {
-    padding: 0 0.5em 0 32px;
+    padding: 0 8px 0 8px;
     border-radius: 0 0 0 20px;
     background-color: #151726;
     color: #f3bc70;
+}
+
+#pulseaudio:not(.microphone) {
     border-style: solid;
     border-color: #f5ecd9;
     border-width: 0 0 0 2px;
@@ -131,6 +134,10 @@ button:hover {
 
 #pulseaudio.muted {
     color: #424c5e;
+}
+
+#pulseaudio.microphone {
+    min-width: 20px;
 }
 
 /* Clock */
