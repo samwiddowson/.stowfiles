@@ -1,8 +1,10 @@
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("json-lsp")
-vim.lsp.enable('css-lsp')
+vim.lsp.enable('cssls')
 vim.lsp.enable('hyprls')
 vim.lsp.enable('taplo')
+
+-- vim.lsp.config('css-lsp')
 
 local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
 
