@@ -156,7 +156,7 @@
     //     "format-disconnected": "Disconnected ⚠",
     //     "format-alt": "{ifname}: {ipaddr}/{cidr}"
     // },
-    "pulseaudio#output": {
+    "pulseaudio": {
         "scroll-step": 2.5, // %, can be a float
         "format": "{volume}% {icon}",
         // "format-bluetooth": "{volume}% {icon} {format_source}",
