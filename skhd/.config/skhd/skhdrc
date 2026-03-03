@@ -34,8 +34,8 @@ ctrl + shift - a : yabai -m space --balance
 ctrl + shift - x : yabai -m space --mirror y-axis
 
 # Moving windows between displays
-cmd + alt - k : yabai -m window --display north; yabai -m display --focus north
-cmd + alt - j : yabai -m window --display south; yabai -m display --focus south
+cmd + alt + shift + ctrl - k : yabai -m window --display north; yabai -m display --focus north
+cmd + alt + shift + ctrl - j : yabai -m window --display south; yabai -m display --focus south
 
 # Moving windows within space
 ctrl + shift - h : yabai -m window --swap west
