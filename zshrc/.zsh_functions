@@ -9,7 +9,12 @@ function yy() {
     rm -f -- "$tmp"
 }
 
-function fuck() {
+function batman() {
+    man $* | bat -l man -p
+}
+
+function jfdi() {
   sudo $(fc -ln -1)
 }
+
 
