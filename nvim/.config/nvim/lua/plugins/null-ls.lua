@@ -8,7 +8,7 @@ return {
                 null_ls.builtins.formatting.prettierd.with({
                     filetypes = { "javascript", "typescript", "css", "html", "json", "markdown", "vue" },
                 }),
-                null_ls.builtins.diagnostics.kube_linter,
+                -- null_ls.builtins.diagnostics.kube_linter,
             }
         })
     end,
