@@ -1,18 +1,17 @@
 # Position
-anchor=top-center
+anchor=top-right
 margin=30,0,0,0
 
 # Sizing
 width=350
 height=150
 padding=15
-border-size=2
-border-radius=15
+border-size=3
+border-radius=0,15
 
-# Everforest Dark colors
-background-color=#2d353b
-text-color=#d3c6aa
-border-color=#a7c080
+# Styling
+background-color=#0d0e1f
+font=0xProto Monospace
 
 # Behaviour
 default-timeout=5000
@@ -24,12 +23,18 @@ max-icon-size=48
 
 # Urgency styling
 [urgency=low]
-border-color=#86c092
+border-color=#8fbf9f
+text-color=#8fbf9f
+# default-timeout=0
 
 [urgency=normal]
-border-color=#a7c080
+border-color=#f3bc70
+text-color=#f3bc70
+layer=overlay
+# default-timeout=0
 
 [urgency=critical]
 border-color=#e67e80
-background-color=#4d353b
+background-color=#3a1f28
+text-color=#e67e80
 default-timeout=0
