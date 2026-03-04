@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-menu_items='󰗆  Area\n  Active Window\n󰍹  Entire Screen'
+menu_items='󰗆  Area\n  Active Window\n󰍹  Active Monitor\n󰍺  Entire Screen'
 
 result=$(echo -e "$menu_items" | wofi --dmenu \
     --prompt "Screenshot Target" -k /dev/null \
@@ -13,11 +13,17 @@ case "$result" in
     *"Active Window"*)
         target="active"
         ;;
+    *"Active Monitor"*)
+        target="output"
+        ;;
+
     *"Entire Screen"*)
         target="screen"
         ;;
 esac
 
-echo target is $target
+# echo target is $target
 
-grimblast --notify --filetype png --wait 0.2 copysave $target
+if [[ -n $target ]]; then
+    grimblast --notify --filetype png --wait 0.2 copysave $target
+fi
