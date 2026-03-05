@@ -7,7 +7,7 @@ import argparse
 import logging
 import sys
 import signal
-import gi
+import subprocess as s
 import json
 import os
 from typing import List
@@ -24,6 +24,9 @@ def signal_handler(sig, frame):
 
 class PlayerManager:
     def __init__(self, selected_player=None, excluded_player=[]):
+        self.current_player_previous_status = None
+        self.current_player_previous_artist = None
+        self.current_player_previous_title = None
         self.manager = Playerctl.PlayerManager()
         self.loop = GLib.MainLoop()
         self.manager.connect(
@@ -108,19 +111,30 @@ class PlayerManager:
         else:    
             self.clear_output()
 
+    def notify_send(self, message):
+        s.call(["notify-send","-u","low",message])
+
+    def notify_send_playing(self, artist, title):
+        if not artist or not title:
+            return
+        s.call(["notify-send","-u","low","Now Playing",f"{title} - {artist}"])
+
     def on_metadata_changed(self, player, metadata, _=None):
         logger.debug(f"Metadata changed for player {player.props.player_name}")
+
+        current_playing = self.get_first_playing_player()
+        is_current_player = current_playing is None or current_playing.props.player_name == player.props.player_name
+        if not is_current_player:
+            logger.debug(f"Other player {current_playing.props.player_name} is playing, skipping")
+            return
+
         player_name = player.props.player_name
         artist = player.get_artist()
-        artist = artist.replace("&", "&amp;")
         title = player.get_title()
-        title = title.replace("&", "&amp;")
 
         track_info = ""
-        if player_name == "spotify" and "mpris:trackid" in metadata.keys() and ":ad:" in player.props.metadata["mpris:trackid"]:
-            track_info = "Advertisement"
-        elif artist is not None and title is not None:
-            track_info = f"{artist} - {title}"
+        if artist is not None and title is not None:
+            track_info = f"{title} - {artist}"
         else:
             track_info = title
 
@@ -129,12 +143,13 @@ class PlayerManager:
                 track_info = " " + track_info
             else:
                 track_info = " " + track_info
-        # only print output if no other player is playing
-        current_playing = self.get_first_playing_player()
-        if current_playing is None or current_playing.props.player_name == player.props.player_name:
-            self.write_output(track_info, player)
-        else:
-            logger.debug(f"Other player {current_playing.props.player_name} is playing, skipping")
+        
+        self.write_output(track_info, player)
+        if self.current_player_previous_artist != artist or self.current_player_previous_title != title:
+            self.notify_send_playing(artist, title)
+        self.current_player_previous_artist = artist
+        self.current_player_previous_title = title
+
 
     def on_player_appeared(self, _, player):
         logger.info(f"Player has appeared: {player.name}")
@@ -150,6 +165,7 @@ class PlayerManager:
 
     def on_player_vanished(self, _, player):
         logger.info(f"Player {player.props.player_name} has vanished")
+        self.notify("Relocating player");
         self.show_most_important_player()
 
 def parse_arguments():

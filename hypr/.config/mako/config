@@ -10,13 +10,14 @@ border-size=3
 border-radius=0,15
 
 # Styling
-background-color=#0d0e1f
+background-color=#0d0e1fbb
 font=0xProto Monospace
 
 # Behaviour
 default-timeout=5000
+# default-timeout=0
 ignore-timeout=0
-sort=-time
+# sort=time
 layer=overlay
 max-visible=5
 max-icon-size=48
@@ -35,6 +36,6 @@ layer=overlay
 
 [urgency=critical]
 border-color=#e67e80
-background-color=#3a1f28
+background-color=#3a1f28bb
 text-color=#e67e80
 default-timeout=0
