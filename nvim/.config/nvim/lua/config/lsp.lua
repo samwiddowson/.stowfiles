@@ -3,6 +3,7 @@ vim.lsp.enable("json-lsp")
 vim.lsp.enable('cssls')
 vim.lsp.enable('hyprls')
 vim.lsp.enable('taplo')
+vim.lsp.enable('rust_analyzer')
 
 -- vim.lsp.config('css-lsp')
 
