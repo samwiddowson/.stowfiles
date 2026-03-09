@@ -18,6 +18,7 @@
     "modules-right": [
         "mpd",
         // "idle_inhibitor",
+        "tray",
         "pulseaudio",
         "pulseaudio#microphone",
         // "network",
@@ -27,7 +28,6 @@
         // "temperature",
         "clock",
         "keyboard-state",
-        "tray",
         // "hyprland/language",
         // "battery",
         // "battery#bat2",
