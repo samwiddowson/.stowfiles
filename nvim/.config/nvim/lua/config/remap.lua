@@ -84,4 +84,4 @@ map("n", "<leader>zi", function()
 end, { desc = "Set foldmethod to 'indent'" })
 
 map("n", "<leader>L", "<CMD>LspRestart<CR>",
-    { desc = "Set foldmethod to 'expr' with treesitter" })
+    { desc = "Restart the LSP" })
