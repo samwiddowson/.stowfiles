@@ -1,10 +1,13 @@
  # not backed up by git - contains local environment variables
 source ~/.ana_variables
 
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init - zsh)"
-    eval "$(pyenv virtualenv-init -)"
-fi
+# only run this manually if required (it's slow)
+function initpyenv() {
+    if command -v pyenv 1>/dev/null 2>&1; then
+        eval "$(pyenv init - zsh)"
+        eval "$(pyenv virtualenv-init -)"
+    fi
+}
 
 export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
 export CPATH="$HOME/src/concord"

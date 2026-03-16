@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 export DOTNET_ROOT=/usr/share/dotnet
 
 # Set library path for Homebrew on macOS - ensure compatibility with ImageMagick and other libraries

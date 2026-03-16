@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+function init_nvm() {
+    export NVM_DIR="$HOME/.nvm"
+      [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+      [ -s "/opt/homebrew/opt/nvm/etc/zsh_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/zsh_completion.d/nvm"  # This loads nvm zsh_completion
+}
+
 function yy() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
     yazi "$@" --cwd-file="$tmp"
