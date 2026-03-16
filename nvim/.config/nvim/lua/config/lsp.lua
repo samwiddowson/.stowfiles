@@ -9,6 +9,7 @@ vim.lsp.enable('taplo')
 vim.lsp.enable('helm-ls')
 vim.lsp.enable('yaml-language-server')
 vim.lsp.enable('copilot-language-server')
+vim.lsp.enable('ts_ls')
 -- vim.lsp.enable('kube-linter')
 -- vim.lsp.enable('rust-analyzer')
 
@@ -37,6 +38,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 end,
                 desc = "[lsp] format on save",
             })
+        end
+        if client.name == "ts_ls" then
+            vim.keymap.set("n", "<Leader>T", ":LspTypescriptSourceAction<CR>",
+                { buffer = ev.buf, desc = "[typescript] organize imports" })
+            vim.keymap.set("n", "gop", ":LspTypescriptGoToSourceDefinition<CR>",
+                { buffer = ev.buf, desc = "[typescript] Go to definition" })
         end
     end,
 })
