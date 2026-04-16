@@ -7,7 +7,7 @@ set -euo pipefail
 readonly ACTIVE_FG='#f3bc70'
 readonly INACTIVE_FG='#76859b'
 readonly CAPS_ICON='󰫮'
-readonly NUM_ICON='󰬹'
+readonly NUM_ICON='󰬺'
 
 # Returns 0 and echoes 0 or 1 if a readable LED brightness file exists; else returns 1.
 read_lock_brightness() {

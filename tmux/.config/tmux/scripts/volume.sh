@@ -9,29 +9,7 @@ linux_volume() {
     if [[ -n "$line" ]]; then
       v=$(echo "$line" | grep -oE '[0-9]+%' | head -1 | tr -d '%')
       if [[ -n "$v" ]]; then
-        printf '%s%%' "$v"
-        return 0
-      fi
-    fi
-  fi
-
-  if command -v wpctl >/dev/null 2>&1; then
-    line=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null) || true
-    if [[ -n "$line" ]]; then
-      v=$(echo "$line" | awk '/Volume:/ { printf "%.0f\n", $2 * 100 }')
-      if [[ -n "$v" ]]; then
-        printf '%s%%' "$v"
-        return 0
-      fi
-    fi
-  fi
-
-  if command -v amixer >/dev/null 2>&1; then
-    line=$(amixer -D pulse sget Master 2>/dev/null || amixer sget Master 2>/dev/null) || true
-    if [[ -n "$line" ]]; then
-      v=$(echo "$line" | grep -oE '\[[0-9]+%\]' | head -1 | tr -d '[]%')
-      if [[ -n "$v" ]]; then
-        printf '%s%%' "$v"
+        printf '%s%' "$v"
         return 0
       fi
     fi
