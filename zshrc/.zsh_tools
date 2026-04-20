@@ -1,3 +1,6 @@
 eval "$(fzf --zsh)"
 eval "$(oh-my-posh init zsh --config '~/.config/oh-my-posh/lambdageneration-constellation.omp.json')"
 eval "$(zoxide init zsh)"
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
