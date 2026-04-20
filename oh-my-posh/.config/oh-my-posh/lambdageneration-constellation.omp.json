@@ -119,8 +119,8 @@
                         "always_enabled": true,
                         "cache_duration": "none"
                     },
-                    "leading_diamond": "\u2570\u2500\ue0b6",
-                    "trailing_diamond": "\ue0b4",
+                    "leading_diamond": "\u2570\u2500",
+                    "trailing_diamond": "",
                     "template": "$",
                     "foreground": "#0d0e1f",
                     "background": "#f3bc70",
