@@ -1,6 +1,7 @@
 [opener]
 edit = [{ run = 'nvim "$@"', orphan = false, block = true }]
 loupe = [{ run = 'loupe "$@"', orphan = true, block = false }]
+ffplay = [{ run = 'ffplay "$@"', orphan = true, block = false }]
 
 [open]
 prepend_rules = [
@@ -15,5 +16,20 @@ prepend_rules = [
     ] },
     { url = "*.gif", use = [
         "loupe",
+    ] },
+    { url = "*.mpg", use = [
+        "ffplay",
+    ] },
+    { url = "*.mp4", use = [
+        "ffplay",
+    ] },
+    { url = "*.wmv", use = [
+        "ffplay",
+    ] },
+    { url = "*.mov", use = [
+        "ffplay",
+    ] },
+    { url = "*.avi", use = [
+        "ffplay",
     ] },
 ]
