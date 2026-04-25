@@ -12,4 +12,4 @@ tmux kill-server
 
 sleep 0.3
 
-hyprshutdown
+hyprctl dispatch exit
