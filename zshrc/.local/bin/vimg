@@ -1,0 +1,74 @@
+#!/bin/zsh
+
+# 1. Setup options
+# extendedglob: for the (#i) case-insensitive and (.) file-only filters
+# local_options: ensures these settings don't leak if sourced
+setopt local_options extendedglob
+
+# 2. Determine target directory and file
+local target_file=""
+local target_dir=""
+
+if [[ -n "$1" ]]; then
+    target_file=$(realpath "$1")
+    target_dir=$(dirname "$target_file")
+else
+    target_dir="$PWD"
+fi
+
+# 3. Gather images
+# (#i) = Case-insensitive
+# (.)  = Regular files only
+# :a   = Absolute paths
+local images=("$target_dir"/(#i)*.(jpg|jpeg|png|gif|webp|bmp|tiff|svg)(.N:a))
+local total=${#images}
+
+# 4. Safety check
+if [[ $total -eq 0 ]]; then
+    echo "No supported images found."
+    exit 1
+fi
+
+# 5. Determine starting index
+local idx=1
+if [[ -n "$target_file" ]]; then
+    local find_idx=${images[(i)$target_file]}
+    [[ $find_idx -le $total ]] && idx=$find_idx
+fi
+
+# 6. Navigation Loop
+local key
+local redraw=true
+
+while true; do
+    if [[ "$redraw" == "true" ]]; then
+        clear
+        timg -p k "${images[$idx]}"
+        
+        # Print filename in #f3bc70 and index in dimmed/black
+        print -P "\n%F{#f3bc70}File:%f $(basename "${images[$idx]}") %F{black}(${idx}/${total})%f"
+        
+        redraw=false
+    fi
+
+    # Read a single keypress
+    read -k 1 key
+
+    case "$key" in
+        j|l) # Forward
+            (( idx = idx % total + 1 ))
+            redraw=true
+            ;;
+        k|h) # Backward
+            (( idx = (idx - 2 + total) % total + 1 ))
+            redraw=true
+            ;;
+        q) # Quit
+            clear
+            exit 0
+            ;;
+        *)
+            redraw=false
+            ;;
+    esac
+done

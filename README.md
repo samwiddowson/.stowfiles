@@ -20,43 +20,44 @@ From within the .stowfiles directory, `stow nvim` will symlink `nvim/.config/nvi
 
 ## General notes on the setup
 
--   better shell
-    -   install zsh and zsh-completions
--   install stow (see above)
--   install nvim
-    -   install ripgrep (required for nvim plugins)
--   A nicer terminal application
-    -   install kitty
-        -   Install 0xProto nerd font
--   For Node development:
-    -   install nvm
-    -   and node through this
-    -   install prettierd: `npm i -g @fsouza/prettierd`
-    -   install eslint: `npm i -g eslint`
--   Prettier CLI:
-    -   install oh-my-posh
-        -   Install 0xProto nerd font (if not already done for kitty)
--   Terminal multiplexer:
-    -   install tmux
-        -   also install [tpm (tmux plugin manager)](https://github.com/tmux-plugins/tpm)
--   Recommended additional tools:
-    -   terminal stuff:
-        -   fzf
-        -   ripgrep
-        -   ffmpeg
-        -   fd
-        -   yazi
-        -   eza
-        -   zoxide
-        -   imagemagick
-    -   mpd
-    -   wiremix (TUI audio device/volume manager)
-    -   impala (TUI network connection manager)
--   hyprland
-    -   `sudo pacman -S hyprland hyprpolkitagent hyprpaper hyprlock hypridle waybar wofi`
-    -   `yay -S hyprshutdown hyprworm`
-    -   run `hyprctl monitors` to get monitor names and tweak `hypr/.config/hypr/land/monitors.conf`
-    -   for the keyboard state module on waybar: `sudo usermod -aG input $USER`
+- better shell
+    - install zsh and zsh-completions
+- install stow (see above)
+- install nvim
+    - install ripgrep (required for nvim plugins)
+- A nicer terminal application
+    - install kitty
+        - Install 0xProto nerd font
+- For Node development:
+    - install nvm
+    - and node through this
+    - install prettierd: `npm i -g @fsouza/prettierd`
+    - install eslint: `npm i -g eslint`
+- Prettier CLI:
+    - install oh-my-posh
+        - Install 0xProto nerd font (if not already done for kitty)
+- Terminal multiplexer:
+    - install tmux
+        - also install [tpm (tmux plugin manager)](https://github.com/tmux-plugins/tpm)
+- Recommended additional tools:
+    - terminal stuff:
+        - fzf
+        - ripgrep
+        - ffmpeg
+        - fd
+        - yazi
+        - eza
+        - zoxide
+        - imagemagick
+        - timg
+    - mpd
+    - wiremix (TUI audio device/volume manager)
+    - impala (TUI network connection manager)
+- hyprland
+    - `sudo pacman -S hyprland hyprpolkitagent hyprpaper hyprlock hypridle waybar wofi`
+    - `yay -S hyprshutdown hyprworm`
+    - run `hyprctl monitors` to get monitor names and tweak `hypr/.config/hypr/land/monitors.conf`
+    - for the keyboard state module on waybar: `sudo usermod -aG input $USER`
 
 Refer to keyboard docs in `docs/`
 
@@ -64,8 +65,8 @@ Refer to keyboard docs in `docs/`
 
 To change to `zsh` shell:
 
--   `chsh -l` to list available shells
--   `chsh -s /full/path/to/shell`
+- `chsh -l` to list available shells
+- `chsh -s /full/path/to/shell`
 
 ## tmux
 

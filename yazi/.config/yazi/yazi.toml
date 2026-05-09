@@ -2,20 +2,25 @@
 edit = [{ run = 'nvim "$@"', orphan = false, block = true }]
 loupe = [{ run = 'loupe "$@"', orphan = true, block = false }]
 ffplay = [{ run = 'ffplay "$@"', orphan = true, block = false }]
+fluidsynth = [
+    { run = 'fluidsynth -a pipewire -m alsa_seq -l "$@"', orphan = false, block = true },
+]
+timg = [{ run = 'vimg "$@"', orphan = false, block = true }]
+
 
 [open]
 prepend_rules = [
     { url = "*.png", use = [
-        "loupe",
+        "timg",
     ] },
     { url = "*.jpg", use = [
-        "loupe",
+        "timg",
     ] },
     { url = "*.jpeg", use = [
-        "loupe",
+        "timg",
     ] },
     { url = "*.gif", use = [
-        "loupe",
+        "timg",
     ] },
     { url = "*.mpg", use = [
         "ffplay",
@@ -31,5 +36,11 @@ prepend_rules = [
     ] },
     { url = "*.avi", use = [
         "ffplay",
+    ] },
+    { url = "*.mid", use = [
+        "fluidsynth",
+    ] },
+    { url = "*.midi", use = [
+        "fluidsynth",
     ] },
 ]
