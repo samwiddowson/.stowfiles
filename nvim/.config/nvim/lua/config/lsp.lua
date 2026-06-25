@@ -13,8 +13,6 @@ vim.lsp.enable('ts_ls')
 -- vim.lsp.enable('kube-linter')
 -- vim.lsp.enable('rust-analyzer')
 
-local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
-
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
@@ -23,22 +21,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
         end
 
-        if client:supports_method("textDocument/formatting") then
-            vim.keymap.set("n", "<Leader>f", function()
-                vim.lsp.buf.format({ bufnr = ev.buf, async = true })
-            end, { buffer = ev.buf, desc = "[lsp] format" })
-
-            -- format on save
-            vim.api.nvim_clear_autocmds({ buffer = ev.buf, group = group })
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                buffer = ev.buf,
-                group = group,
-                callback = function()
-                    vim.lsp.buf.format({ bufnr = ev.buf, async = false })
-                end,
-                desc = "[lsp] format on save",
-            })
-        end
         if client.name == "ts_ls" then
             vim.keymap.set("n", "<Leader>T", ":LspTypescriptSourceAction<CR>",
                 { buffer = ev.buf, desc = "[typescript] organize imports" })
