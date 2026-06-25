@@ -10,7 +10,7 @@ function initpyenv() {
 }
 
 export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
-export CPATH="$HOME/src/concord"
+export CPATH="$HOME/src/concord-workspaces/concord"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/versions/3.9.25/bin/python"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
