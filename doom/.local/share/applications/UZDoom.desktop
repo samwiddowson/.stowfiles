@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=UZDoom
+Exec=/home/sam/.local/bin/appimages/UZDoom.AppImage
+Icon=UZDoom
+Type=Application
+Categories=Game;
+StartupNotify=true
+Terminal=false
+Keywords=Doom;wad;pk3
+

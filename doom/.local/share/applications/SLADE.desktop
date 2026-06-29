@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=SLADE
+Exec=slade
+Icon=SLADE
+Type=Application
+Categories=Game;
+StartupNotify=true
+Terminal=false
+Keywords=Doom;wad;pk3
+
