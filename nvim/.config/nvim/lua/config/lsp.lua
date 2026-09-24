@@ -10,6 +10,8 @@ vim.lsp.enable('helm-ls')
 vim.lsp.enable('yaml-language-server')
 vim.lsp.enable('copilot-language-server')
 vim.lsp.enable('ts_ls')
+vim.lsp.enable('kotlin_lsp')
+
 -- vim.lsp.enable('kube-linter')
 -- vim.lsp.enable('rust-analyzer')
 
