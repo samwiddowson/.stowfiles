@@ -1,9 +1,58 @@
+local function js_debug_server_path()
+    local path = vim.fn.stdpath("data")
+        .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"
+
+    if vim.fn.filereadable(path) == 0 then
+        vim.notify(
+            "js-debug-adapter not installed. Run :MasonInstall js-debug-adapter",
+            vim.log.levels.WARN
+        )
+    end
+
+    return path
+end
+
 return {
     "mfussenegger/nvim-dap",
     dependencies = { "igorlfs/nvim-dap-view", "mfussenegger/nvim-dap-python" },
     config = function()
         local dap = require("dap")
         local dap_ui_widgets = require("dap.ui.widgets")
+
+        dap.adapters["pwa-node"] = {
+            type = "server",
+            host = "127.0.0.1",
+            port = "${port}",
+            executable = {
+                command = "node",
+                args = {
+                    js_debug_server_path(),
+                    "${port}",
+                    "127.0.0.1",
+                },
+            },
+        }
+
+        for _, language in ipairs({ "javascript", "typescript", "javascriptreact", "typescriptreact" }) do
+            dap.configurations[language] = {
+                {
+                    type = "pwa-node",
+                    request = "launch",
+                    name = "Launch file",
+                    program = "${file}",
+                    cwd = "${workspaceFolder}",
+                    sourceMaps = true,
+                    skipFiles = { "<node_internals>/**" },
+                },
+                {
+                    type = "pwa-node",
+                    request = "attach",
+                    name = "Attach",
+                    processId = require("dap.utils").pick_process,
+                    cwd = "${workspaceFolder}",
+                },
+            }
+        end
 
         -- set up nvim-dap-python
         -- TODO: probably only run this for a python project with a .venv
