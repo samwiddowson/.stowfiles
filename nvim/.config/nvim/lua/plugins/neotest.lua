@@ -6,37 +6,76 @@ return {
         "antoinemadec/FixCursorHold.nvim",
         "nvim-treesitter/nvim-treesitter",
         "nvim-neotest/neotest-python",
+        "nvim-neotest/neotest-jest",
+        "marilari88/neotest-vitest",
+        "codymikol/neotest-kotlin",
+        "mfussenegger/nvim-dap",
     },
     config = function()
         local neotest = require("neotest")
+        local react_test_files = require("config.react-test-files")
+        local jest_util = require("neotest-jest.jest-util")
+
+        local function ignore_dir(name)
+            local ignore = {
+                "node_modules",
+                ".venv",
+                "venv",
+                ".git",
+                "__pycache__",
+                "dist",
+                "build",
+            }
+            return not vim.tbl_contains(ignore, name)
+        end
 
         neotest.setup({
             discovery = {
                 filter_dir = function(name, rel_path, root)
-                    -- Ignore these directories
-                    local ignore = {
-                        "node_modules",
-                        ".venv",
-                        "venv",
-                        ".git",
-                        "__pycache__",
-                        "dist",
-                        "build",
-                    }
-                    for _, dir in ipairs(ignore) do
-                        if name == dir then
-                            return false
-                        end
-                    end
-                    return true
+                    return ignore_dir(name)
                 end,
             },
             adapters = {
                 require("neotest-python")({
                     args = { "--log-level", "DEBUG" },
                     runner = "pytest",
-                })
-            }
+                }),
+                require("neotest-jest")({
+                    isTestFile = function(file_path)
+                        if not react_test_files.is_react_test_file(file_path) then
+                            return false
+                        end
+                        return jest_util.hasJestDependency(file_path)
+                    end,
+                }),
+                require("neotest-vitest")({
+                    is_test_file = function(file_path)
+                        return react_test_files.is_react_test_file(file_path)
+                    end,
+                    filter_dir = function(name, rel_path, root)
+                        return ignore_dir(name)
+                    end,
+                }),
+                (function()
+                    local kotlin = require("neotest-kotlin")
+                    local build_spec = kotlin.build_spec
+                    function kotlin.build_spec(args)
+                        local spec = build_spec(args)
+                        if not spec then
+                            return nil
+                        end
+                        -- The Splunk javaagent is attached to every Gradle test task and
+                        -- tries to export to localhost:4318. Nothing listens there locally.
+                        spec.env = vim.tbl_extend("force", spec.env or {}, {
+                            OTEL_METRICS_EXPORTER = "none",
+                            OTEL_TRACES_EXPORTER = "none",
+                            OTEL_LOGS_EXPORTER = "none",
+                        })
+                        return spec
+                    end
+                    return kotlin
+                end)(),
+            },
         })
 
         vim.keymap.set("n", "<leader>to", function()
@@ -58,5 +97,13 @@ return {
         vim.keymap.set("n", "<leader>tw", function()
             neotest.watch.toggle(vim.fn.expand("%"))
         end, { desc = "NeoTest: Toggle watch on current file" })
+
+        vim.keymap.set("n", "<leader>td", function()
+            neotest.run.run({ strategy = "dap" })
+        end, { desc = "NeoTest: Debug nearest test" })
+
+        vim.keymap.set("n", "<leader>tD", function()
+            neotest.run.run({ vim.fn.expand("%"), strategy = "dap" })
+        end, { desc = "NeoTest: Debug current file" })
     end
 }
