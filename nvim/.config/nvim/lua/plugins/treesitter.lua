@@ -7,7 +7,7 @@ return {
     init = function()
         local ensure_installed = {
             "bash", "c", "ecma", "groovy", "html", "html_tags", "java", "javascript", "json", "jsx", "kotlin", "lua",
-            "make", "markdown", "markdown_inline", "python", "query", "toml", "typescript", "vim", "vimdoc", "yaml",
+            "make", "markdown", "markdown_inline", "python", "query", "toml", "tsx", "typescript", "vim", "vimdoc", "yaml",
             "zsh",
         }
 
