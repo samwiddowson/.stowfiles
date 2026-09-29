@@ -58,31 +58,17 @@ return {
                 }),
                 (function()
                     local kotlin = require("neotest-kotlin")
-                    local build_spec = kotlin.build_spec
-                    function kotlin.build_spec(args)
-                        local spec = build_spec(args)
-                        if not spec then
-                            return nil
-                        end
-                        -- The Splunk javaagent is attached to every Gradle test task and
-                        -- tries to export to localhost:4318. Nothing listens there locally.
-                        spec.env = vim.tbl_extend("force", spec.env or {}, {
-                            OTEL_METRICS_EXPORTER = "none",
-                            OTEL_TRACES_EXPORTER = "none",
-                            OTEL_LOGS_EXPORTER = "none",
-                        })
-                        return spec
-                    end
+                    require("config.neotest-kotlin-junit").install(kotlin)
                     return kotlin
                 end)(),
             },
         })
 
-        vim.keymap.set("n", "<leader>to", function()
+        vim.keymap.set("n", "<leader>tt", function()
             neotest.output_panel.toggle()
         end, { desc = "NeoTest: Toggle output" })
 
-        vim.keymap.set("n", "<leader>ts", function()
+        vim.keymap.set("n", "<leader>to", function()
             neotest.summary.toggle()
         end, { desc = "NeoTest: Toggle summary" })
 
