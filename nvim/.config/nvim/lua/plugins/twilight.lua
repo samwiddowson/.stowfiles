@@ -21,6 +21,6 @@ return {
         exclude = {}, -- exclude these filetypes
     },
     config = function()
-        vim.keymap.set("n", "<leader>tt", vim.cmd.Twilight, { desc = "Twilight mode" })
+        vim.keymap.set("n", "<leader>.", vim.cmd.Twilight, { desc = "Twilight mode" })
     end
 }
