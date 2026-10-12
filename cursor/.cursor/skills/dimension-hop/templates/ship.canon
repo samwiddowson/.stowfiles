@@ -1,0 +1,20 @@
+# ship.canon v1 — machine state; prefer edit efficiency over prose
+# sep=|  #=#comment  empty field=
+# S|key|value
+# D|id|name|stack|cond|note
+#   cond=nominal|degraded|offline|damaged|upgraded|building
+# L|stardate|id|tag|cond|note
+#   tag=dmg|repair|upgrade|add|status|event
+# rules: new location => append D+L(tag=add); dmg/upgrade/repair => rewrite D.cond + append L
+
+S|name|UES {{SHIP_NAME}}
+S|class|{{SHIP_CLASS_SHORT}}
+S|reg|{{SHIP_REG}}
+S|cond|nominal
+S|spec|{{SHIP_SPEC}}
+S|sim|{{SHIP_SIM}}
+S|sector|{{SECTOR}}
+
+{{DECK_LINES}}
+
+{{LOG_LINES}}
