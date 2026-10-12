@@ -295,7 +295,3 @@ top6=Ctrl+Alt+_
 
 [services][org.kde.krunner.desktop]
 _launch=Search\tAlt+F2\tMeta+Space
-
-[services][org.kde.spectacle.desktop]
-CurrentMonitorScreenShot=none
-OpenWithoutScreenshot=none

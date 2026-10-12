@@ -6,8 +6,8 @@ RightButton;NoModifier=org.kde.contextmenu
 
 [Containments][26]
 ItemGeometries-1280x800=Applet-64:32,640,464,128,0;Applet-63:576,16,464,96,0;Applet-44:1056,16,208,96,0;Applet-65:991.36,656.16,272,128,0;
-ItemGeometries-3440x1440=Applet-44:3200.05,16,240,96,0;Applet-63:2032,240,1408,96,0;Applet-65:3136,1296,272,128,0;
-ItemGeometriesHorizontal=Applet-44:3200.05,16,240,96,0;Applet-63:2032,240,1408,96,0;Applet-65:3136,1296,272,128,0;
+ItemGeometries-3440x1440=Applet-63:0,0,1024,96,0;Applet-44:3104.01,0,336,80,0;Applet-65:3200,1216,224,208,0;
+ItemGeometriesHorizontal=Applet-63:0,0,1024,96,0;Applet-44:3104.01,0,336,80,0;Applet-65:3200,1216,224,208,0;
 activityId=1628bf67-520e-41d5-a3ba-c0b2af6dd807
 formfactor=0
 immutability=1
@@ -279,6 +279,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][26][Applets][44][Applets][57][Configuration][General]
+currentTab=streams
 migrated=true
 
 [Containments][26][Applets][44][Applets][58]
