@@ -1,0 +1,14 @@
+# crew.canon v1 — machine state; prefer edit efficiency over prose
+# sep=|  #=#comment  empty field=
+# P|role|skills|rank
+# C|id|name|rank|post|domain|persona|analogy|status|rel|since
+#   status=ok|injured|stranded|mia|kia|leave|duty
+#   rel=-10..10 (0=unmet; first meet sets since+rel>=1)
+# E|stardate|id|tag|drel|note
+#   tag=meet|chat|help|teach|conflict|praise|injury|strand|rescue|promo|transfer|other
+# rules: on status/rel change rewrite C line; append E; introduce <=2 unmet (rel=0) per beat
+# intro_order: {{INTRO_ORDER}}
+
+P|crew|{{PLAYER_SKILLS}}|TBD
+
+{{CREW_LINES}}
