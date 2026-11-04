@@ -15,6 +15,8 @@ return {
             { noremap = true, silent = true, desc = "Find implementations" })
         vim.keymap.set('n', 'grr', '<Cmd>Lspsaga finder ref<CR>',
             { noremap = true, silent = true, desc = "Find references" })
+        vim.keymap.set('n', 'grn', '<Cmd>Lspsaga rename<CR>',
+            { noremap = true, silent = true, desc = "Rename symbol" })
         vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>',
             { noremap = true, silent = true, desc = "Peek definition" })
         vim.keymap.set('n', 'gop', '<Cmd>Lspsaga goto_definition<CR>',
