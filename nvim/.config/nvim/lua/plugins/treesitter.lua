@@ -7,7 +7,8 @@ return {
     init = function()
         local ensure_installed = {
             "bash", "c", "ecma", "groovy", "html", "html_tags", "java", "javascript", "json", "jsx", "kotlin", "lua",
-            "make", "markdown", "markdown_inline", "python", "query", "tmux", "toml", "tsx", "typescript", "vim", "vimdoc", "yaml",
+            "make", "markdown", "markdown_inline", "python", "query", "tmux", "toml", "tsx", "typescript", "vim",
+            "vimdoc", "yaml",
             "zsh",
         }
 
@@ -24,7 +25,10 @@ return {
                     end)
                 end
                 pcall(vim.treesitter.start)
-                vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                local lang = vim.treesitter.language.get_lang(args.match) or args.match
+                if vim.treesitter.query.get(lang, 'indents') then
+                    vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                end
             end,
         })
 
