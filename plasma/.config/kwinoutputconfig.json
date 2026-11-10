@@ -6,26 +6,17 @@
                 "allowDdcCi": true,
                 "allowSdrSoftwareBrightness": true,
                 "autoBrightnessCurve": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
+                    [
+                        0,
+                        1
+                    ]
                 ],
                 "autoRotation": "InTabletMode",
                 "automaticBrightness": false,
                 "brightness": 1,
                 "colorPowerTradeoff": "PreferAccuracy",
                 "colorProfileSource": "sRGB",
-                "connectorName": "HDMI-A-3",
-                "customModes": [
-                ],
+                "connectorName": "HDMI-A-1",
                 "detectedDdcCi": false,
                 "edidHash": "46c1cd5f0602be6da10a448a104e7d20",
                 "edidIdentifier": "SGN 4544 20221020 43 2022 0",
@@ -56,26 +47,17 @@
                 "allowDdcCi": true,
                 "allowSdrSoftwareBrightness": false,
                 "autoBrightnessCurve": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
+                    [
+                        0,
+                        1
+                    ]
                 ],
                 "autoRotation": "InTabletMode",
                 "automaticBrightness": false,
-                "brightness": 0.89,
+                "brightness": 0.9,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
                 "connectorName": "DP-1",
-                "customModes": [
-                ],
                 "detectedDdcCi": true,
                 "edidHash": "43994035378a59344f3c6c6ce22505ab",
                 "edidIdentifier": "DEL 41537 810962764 2 2024 0",
@@ -86,10 +68,21 @@
                 "iccProfilePath": "",
                 "maxBitsPerColor": 0,
                 "mode": {
-                    "flags": 0,
-                    "height": 1440,
-                    "refreshRate": 120000,
-                    "width": 3440
+                    "cvt": {
+                        "clock": 666120,
+                        "flags": 9,
+                        "hdisplay": 3440,
+                        "hskew": 0,
+                        "hsyncEnd": 3520,
+                        "hsyncStart": 3488,
+                        "htotal": 3640,
+                        "vdisplay": 1440,
+                        "vscan": 0,
+                        "vsyncEnd": 1453,
+                        "vsyncStart": 1443,
+                        "vtotal": 1525
+                    },
+                    "flags": 0
                 },
                 "overscan": 0,
                 "rgbRange": "Automatic",
@@ -107,26 +100,17 @@
                 "allowDdcCi": true,
                 "allowSdrSoftwareBrightness": true,
                 "autoBrightnessCurve": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
+                    [
+                        0,
+                        1
+                    ]
                 ],
                 "autoRotation": "InTabletMode",
                 "automaticBrightness": false,
                 "brightness": 1,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
-                "connectorName": "HDMI-A-3",
-                "customModes": [
-                ],
+                "connectorName": "HDMI-A-1",
                 "detectedDdcCi": false,
                 "edidHash": "cb59eb465bf42ee61de503a7a63e762b",
                 "edidIdentifier": "LTM 11266 16843009 1 2011 0",
