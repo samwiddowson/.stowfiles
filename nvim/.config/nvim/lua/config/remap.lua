@@ -38,9 +38,9 @@ map("n", "<leader><leader>pp", "\"+p", { desc = "Put from clipboard" })
 -- other
 map("x", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 map("x", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
-map("x", ">>", ">>gv", { desc = "Keep text highlighted after shifting indent" })
-map("x", "<<", "<<gv", { desc = "Keep text highlighted after shifting indent" })
-map({ "n", "x" }, "<leader>l", ":norm ", { desc = ":norm shortcut" })
+map("x", ">", ">gv", { desc = "Keep text highlighted after shifting indent" })
+map("x", "<", "<gv", { desc = "Keep text highlighted after shifting indent" })
+map({ "n", "x" }, "<leader>l", ":norm ", { desc = ":norm shortcut" }) --the :norm shortcut is for running normal mode commands on multiple lines, e.g. <leader>lgg to run gg on all selected lines
 
 map("n", "J", "mzJ`z", { desc = "Join line below and retain cursor position" })
 
