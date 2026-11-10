@@ -52,7 +52,7 @@ end, { desc = "Toggle word wrapping" })
 -- map("n", "n", "nzzzv", { desc = "" })
 -- map("n", "N", "Nzzzv", { desc = "" })
 
-map("i", "<C-n>", "<C-x><C-o>", { desc = "Activate autocomplete" })
+-- map("i", "<C-n>", "<C-x><C-o>", { desc = "Activate autocomplete" })
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word in file" })
 map("x", "<leader>s", function()
