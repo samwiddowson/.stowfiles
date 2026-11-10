@@ -29,6 +29,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.keymap.set("n", "gop", ":LspTypescriptGoToSourceDefinition<CR>",
                 { buffer = ev.buf, desc = "[typescript] Go to definition" })
         end
+        if client.name == "kotlin_lsp" then
+            vim.keymap.set("n", "<Leader>T", function()
+                vim.lsp.buf.code_action({
+                    context = { only = { "source.organizeImports" } },
+                    apply = true,
+                })
+            end, { buffer = ev.buf, desc = "[kotlin] organize imports" })
+        end
     end,
 })
 
