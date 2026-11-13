@@ -23,10 +23,9 @@ function jfdi() {
   sudo $(fc -ln -1)
 }
 
-function launchjavals() {
-    ~/.local/share/nvim/mason/bin/intellij-server \
+function kotlinls() {
+      IJ_JAVA_OPTIONS=-Xmx8g kotlin-lsp \
         --multi-client  \
-        --socket=127.0.0.1:9999  \
-        --system-path=~/Library/Caches/JetBrains/IntelliJServer
+        --socket=127.0.0.1:9999
 }
 
