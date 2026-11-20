@@ -24,7 +24,7 @@ function jfdi() {
 }
 
 function kotlinls() {
-      IJ_JAVA_OPTIONS=-Xmx8g kotlin-lsp \
+      IJ_JAVA_OPTIONS=-Xmx16g kotlin-lsp \
         --multi-client  \
         --socket=127.0.0.1:9999
 }
