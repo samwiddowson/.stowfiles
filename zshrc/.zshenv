@@ -6,3 +6,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:/home/sam/src/zig/zls/zig-out/bin
+
+# tells gent to store credentials in ~/.config/cursor/auth.json
+# required by neocursor
+export AGENT_CLI_CREDENTIAL_STORE=file
